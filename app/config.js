@@ -3,7 +3,7 @@ define([], function () {
     portalUrl: "http://jsapi.maps.arcgis.com/",
     itemId: "cb15de11a6a9451a9216af35b9ccba75",
     buildingLayerTitle: "Panden",
-    heightField: "ondergrond",
+    heightField: "MAX_hoogte",
     usageField: "pandstatus",
     yearField: "bouwjaar",
     timeline: {
@@ -54,7 +54,7 @@ define([], function () {
     usageValues: [{
       value: "Pand in gebruik",
       color: "#00FFC5",
-      label: "Pand in gebruik"
+      label: "Bijeenkomstfunctie"
     
     }]
   }
