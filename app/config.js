@@ -3,7 +3,7 @@ define([], function () {
     portalUrl: "http://jsapi.maps.arcgis.com/",
     itemId: "cb15de11a6a9451a9216af35b9ccba75",
     buildingLayerTitle: "Panden",
-    heightField: "hoogte",
+    heightField: "MAX_hoogte",
     usageField: "pandstatus",
     yearField: "bouwjaar",
     timeline: {
