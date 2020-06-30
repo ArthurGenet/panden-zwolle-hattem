@@ -54,7 +54,7 @@ define([], function () {
     usageValues: [{
       value: "Pand in gebruik",
       color: "#00FFC5",
-      label: "Bijeenkomstfunctie"
+      label: "Pand in gebruik"
     
     }]
   }
