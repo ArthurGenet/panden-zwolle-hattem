@@ -62,7 +62,10 @@ define([
         filterGeometry: null,
         features: null
       };
+      console.log(config.usageField);
+      console.log(config.yearField);
 
+      
       const webscene = new WebScene({
         portalItem: {
           id: config.itemId
