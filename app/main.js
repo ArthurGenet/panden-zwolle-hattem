@@ -64,8 +64,9 @@ define([
       };
       console.log(config.usageField);
       console.log(config.yearField);
+      console.log("mais what");
 
-      
+
       const webscene = new WebScene({
         portalItem: {
           id: config.itemId
@@ -80,6 +81,8 @@ define([
 
       view.when(function () {
         webscene.allLayers.forEach(layer => {
+          console.log(layer.title);
+          console.log(config.buildingLayerTitle);
           if (layer.title === config.buildingLayerTitle) {
             console.log("ok");
             bdgLayer = layer;
