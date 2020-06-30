@@ -128,7 +128,7 @@ define([
 
       });
       webscene.add(sketchLayer);
-
+      console.log("coucou");
       const sketchViewModel = new SketchViewModel({
         layer: sketchLayer,
         defaultUpdateOptions: {
