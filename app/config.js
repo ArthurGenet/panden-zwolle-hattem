@@ -52,7 +52,7 @@ define([], function () {
       binSize: 5
     },
     usageValues: [{
-      value: null,
+      value: "Pand in gebruik",
       color: "#00FFC5",
       label: "Bijeenkomstfunctie"
     

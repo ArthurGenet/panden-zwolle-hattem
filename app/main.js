@@ -78,11 +78,13 @@ define([
       view.when(function () {
         webscene.allLayers.forEach(layer => {
           if (layer.title === config.buildingLayerTitle) {
+            console.log("ok");
             bdgLayer = layer;
             bdgLayer.popupTemplate = {
               content: `Dit gebouw is {${config.heightField}}m lang, gebouwd in
               {${config.yearField}} en het heeft een {${config.usageField}}.`
             };
+            console.log("ok2");
             bdgLayer.outFields = [config.heightField, config.yearField, config.usageField];
 
             view.whenLayerView(layer).then(function (lyrView) {
