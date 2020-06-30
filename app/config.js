@@ -2,7 +2,7 @@ define([], function () {
   return {
     portalUrl: "http://jsapi.maps.arcgis.com/",
     itemId: "cb15de11a6a9451a9216af35b9ccba75",
-    buildingLayerTitle: "Panden3D Zwolle Hattem WGS - PandenZwolleHattem 3D",
+    buildingLayerTitle: "Panden",
     heightField: "hoogte",
     usageField: "pandstatus",
     yearField: "bouwjaar",
