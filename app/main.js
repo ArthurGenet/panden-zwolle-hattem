@@ -85,6 +85,7 @@ define([
           console.log(config.buildingLayerTitle);
           if (layer.title === config.buildingLayerTitle) {
             console.log("ok");
+            console.log(config.heightField);
             bdgLayer = layer;
             bdgLayer.popupTemplate = {
               content: `Dit gebouw is {${config.heightField}}m lang, gebouwd in
