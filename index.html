@@ -1,197 +1,62 @@
+<!-- http://zrh.mapsdevext.arcgis.com/home/webscene/viewer.html?webscene=6d7fedb7a8d84c9fad6903583c6c63c6 -->
+<!-- http://jsapi.maps.arcgis.com/home/webscene/viewer.html?webscene=d9d0b213cd814daa82a8e7142c9dda6e -->
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="initial-scale=1,maximum-scale=1,user-scalable=no"
-    />
-    <title>Save a web scene - 4.15</title>
 
-    <link
-      rel="stylesheet"
-      href="https://js.arcgis.com/4.15/esri/themes/light/main.css"
-    />
-    <script src="https://js.arcgis.com/4.15/"></script>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <title>Drechtsteden gebouwen</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/next/esri/css/main.css" />
+  <link rel="stylesheet" href="./style.css" />
 
-    <style>
-      html,
-      body {
-        padding: 0;
-        margin: 0 !important;
-        height: 100%;
-        width: 100%;
-      }
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+  <script>
+    window.dojoConfig = {
+      async: true,
+      packages: [{
+        name: 'app',
+        location: location.pathname.replace(/\/[^\/]+$/, '') + 'app/'
+      }]
+    };
+  </script>
+  <script src="https://js.arcgis.com/next/"></script>
+  <script>
+    require([
+      'app/main'
+    ], function (main) {
+      main.init();
+    });
+  </script>
+</head>
 
-      #sidebarDiv {
-        position: absolute;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 300px;
-      }
-
-      #overlayDiv {
-        z-index: 1;
-        position: absolute;
-        margin: auto auto;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        width: 400px;
-        height: 160px;
-        padding: 10px;
-        background-color: white;
-        border: 1px solid grey;
-        visibility: hidden;
-      }
-
-      #viewDiv {
-        position: absolute;
-        right: 0;
-        left: 300px;
-        top: 0;
-        bottom: 0;
-      }
-
-      .head,
-      .info {
-        margin: 0 auto;
-        width: 100%;
-        padding: 20px;
-      }
-
-      .info {
-        font-size: 75%;
-        font-weight: 200;
-      }
-
-      #websceneTitle {
-        width: 100%;
-        margin-bottom: 10px;
-      }
-    </style>
-
-    <script>
-      require([
-        "esri/identity/OAuthInfo",
-        "esri/identity/IdentityManager",
-        "esri/views/SceneView",
-        "esri/WebScene"
-      ], function(OAuthInfo, esriId, SceneView, WebScene) {
-        var info = new OAuthInfo({
-          // Swap this ID out with a registered application ID
-          appId: "nCTVYx63y8WJGjxY",
-          // Uncomment the next line and update if using your own portal
-          // portalUrl: "https://<host>:<port>/arcgis"
-          // Uncomment the next line to prevent the user's signed in state from being shared with other apps on the same domain with the same authNamespace value.
-          // authNamespace: "portal_oauth_inline",
-          popup: true
-        });
-        esriId.registerOAuthInfos([info]);
-
-        /************************************************************
-         * Creates a new WebScene instance. A WebScene can reference
-         * a PortalItem ID that represents a WebScene saved to
-         * arcgis.com or an on-premise portal.
-         *
-         * To load a WebScene from an on-premise portal, set the portal
-         * url with esriConfig.portalUrl (see above).
-         ************************************************************/
-        var scene = new WebScene({
-          portalItem: {
-            // autocasts as new PortalItem()
-            id: "cb15de11a6a9451a9216af35b9ccba75"
-          }
-        });
-
-        /************************************************************
-         * Set the WebScene instance to the map property in a
-         * SceneView.
-         ************************************************************/
-        var view = new SceneView({
-          map: scene,
-          container: "viewDiv",
-          padding: {
-            top: 40
-          }
-        });
-
-        view.when(function() {
-          // when the scene and view resolve, display the scene's
-          // new title in the Div
-          var sidebar = document.getElementById("sidebarDiv");
-          var title = sidebar.getElementsByTagName("input")[0];
-          var save = sidebar.getElementsByTagName("input")[1];
-
-          title.value = "WebScene Saving Sample";
-          save.disabled = false;
-
-          var overlay = document.getElementById("overlayDiv");
-          var ok = overlay.getElementsByTagName("input")[0];
-
-          function statusMessage(head, info) {
-            overlay.getElementsByClassName("head")[0].innerHTML = head;
-            overlay.getElementsByClassName("info")[0].innerHTML = info;
-            overlay.style.visibility = "visible";
-          }
-
-          ok.addEventListener("click", function() {
-            overlay.style.visibility = "hidden";
-          });
-
-          save.addEventListener("click", function() {
-            // item automatically casts to a PortalItem instance by saveAs
-            var item = {
-              title: title.value
-            };
-
-            // Update properties of the WebScene related to the view. This should be called just before saving a scene.
-            scene.updateFrom(view);
-
-            scene
-              .saveAs(item)
-              // Saved successfully
-              .then(function(item) {
-                // link to the newly-created web scene item
-                var itemPageUrl =
-                  item.portal.url + "/home/item.html?id=" + item.id;
-                var link =
-                  '<a target="_blank" href="' +
-                  itemPageUrl +
-                  '">' +
-                  title.value +
-                  "</a>";
-
-                statusMessage(
-                  "Save Webscene",
-                  "<br> Successfully saved as <i>" + link + "</i>"
-                );
-              })
-              // Save didn't work correctly
-              .catch(function(error) {
-                statusMessage("Save Webscene", "<br> Error " + error);
-              });
-          });
-        });
-      });
-    </script>
-  </head>
-
-  <body>
-    <div id="sidebarDiv" class="esri-widget">
-      <div style="padding: 10px">
-        <h3>Save Webscene</h3>
-        <div style="padding-bottom: 10px">Title:</div>
-        <input id="websceneTitle" class="esri-input" type="text" />
-        <input type="button" class="esri-button" value="Save" disabled />
+<body>
+  <div id="viewDiv">
+    <div id="statsContainer">
+      <div class="title">Drechtsteden gebouwen</div>
+      <div class="charts">
+        <div>
+          <canvas id="yearChart" width="350" height="170"></canvas>
+          <button id="applyYearRenderer">Kleur op basis van bouwjaar</button>
+        </div>
+        <div>
+          <canvas id="heightChart" width="350" height="170"></canvas>
+          <button id="applyHeightRenderer">Kleur op basis van hoogte</button>
+        </div>
+        <div>
+          <canvas id="usageChart" width="350" height="170"></canvas>
+          <button id="applyUsageRenderer">Kleur op basis van gebruiksfunctie</button>
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="drawPolygon">Teken een selectie polygoon</button>
+        <button id="clearSelection">Verwijder selectie</button>
+        <button id="clearRenderer">Verwijder renderer</button>
       </div>
     </div>
-    <div id="overlayDiv">
-      <label class="head"></label> <label class="info"></label>
-      <input type="button" value="Ok" />
+    <div id="timeContainer" class="esri-widget">
     </div>
-    <div id="viewDiv"></div>
-  </body>
+  </div>
+</body>
+
 </html>
