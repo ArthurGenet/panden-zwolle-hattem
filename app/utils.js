@@ -1,19 +1,18 @@
 define(["app/config", "esri/Color"], function (config, Color) {
 
-function calculateHeightBins() {
+  function calculateHeightBins() {
     const bins = [];
     const stops = config.heightVariable.stops;
     const binSize = config.heightVariable.binSize;
-    for (let i = stops[stops.length - 1].value; i >= stops[0].value-binSize; i -= binSize) {
+    for (let i = stops[stops.length - 1].value; i >= stops[0].value; i -= binSize) {
       const nextValue = i + binSize;
-      console.log(nextValue);
       let fieldName = `height_${i}_${nextValue}`;
       let label = `${i} < ${nextValue}m`;
       let statsField = `CASE WHEN (${config.heightField} < ${nextValue} AND ${config.heightField} >= ${i}) THEN 1 ELSE 0 END`;
-      if (i - binSize < stops[0].value-binSize) {
+      if (i - binSize < stops[0].value) {
         fieldName = `height_${i}`;
-        label = `< ${i+binSize}m`;
-        statsField = `CASE WHEN (${config.heightField} < ${i+binSize}) THEN 1 ELSE 0 END`;
+        label = `< ${i}m`;
+        statsField = `CASE WHEN (${config.heightField} < ${i}) THEN 1 ELSE 0 END`;
       }
       if (i === stops[stops.length - 1].value) {
         fieldName = `height_${i}`;
