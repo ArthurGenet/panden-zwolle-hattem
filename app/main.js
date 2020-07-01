@@ -95,7 +95,7 @@ define([
             //console.log(config.heightField);
             console.log(config.yearField);
             console.log(config.usageField);
-            bdgLayer.outFields = [config.heightField, config.yearField, config.usageField];
+            //bdgLayer.outFields = [config.heightField, config.yearField, config.usageField];
             console.log("ok3");
             view.whenLayerView(layer).then(function (lyrView) {
               bdgLayerView = lyrView;
