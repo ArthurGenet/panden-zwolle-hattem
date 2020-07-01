@@ -1,4 +1,10 @@
+let bdgLayer = null;
 
+function defExpression(date_expression, height_expression, usage_expression){
+  def_expression = date_expression+height_expression+usage_expression;
+  console.log(def_expression);
+  bdgLayer.definitionExpression = def_expression;
+}
 
 
 define([
@@ -31,6 +37,7 @@ define([
 
   return {
     init: function () {
+
       var info = new OAuthInfo({
           // Swap this ID out with a registered application ID
           appId: "nCTVYx63y8WJGjxY",
@@ -47,7 +54,6 @@ define([
 
       
       let bdgLayerView = null;
-      let bdgLayer = null;
 
       const appState = {
         minYear: 0,
