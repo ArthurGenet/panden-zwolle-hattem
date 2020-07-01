@@ -1,10 +1,4 @@
-let bdgLayer = null;
 
-function defExpression(date_expression, height_expression, usage_expression){
-  def_expression = date_expression+height_expression+usage_expression;
-  console.log(def_expression);
-  bdgLayer.definitionExpression = def_expression;
-}
 
 
 define([
@@ -54,6 +48,7 @@ define([
 
       
       let bdgLayerView = null;
+      let bdgLayer = null;
 
       const appState = {
         minYear: 0,
@@ -95,7 +90,7 @@ define([
             //console.log(config.heightField);
             console.log(config.yearField);
             console.log(config.usageField);
-            //bdgLayer.outFields = [config.heightField, config.yearField, config.usageField];
+            bdgLayer.outFields = [config.heightField, config.yearField, config.usageField];
             console.log("ok3");
             view.whenLayerView(layer).then(function (lyrView) {
               bdgLayerView = lyrView;
