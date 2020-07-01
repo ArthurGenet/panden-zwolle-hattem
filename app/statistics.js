@@ -30,11 +30,13 @@ define(["app/config", "app/utils"], function (config, appUtils) {
 
   function generateUsageStatistics() {
     const types = [];
+    var index = -1;
     const usageStats = config.usageValues.map(function (element) {
       types.push(element.value);
+      index+=1
       return {
         onStatisticField:
-          `CASE WHEN ${config.usageField} = '${element.value}' THEN 1 ELSE 0 END`,
+          `CASE WHEN ${config.usageField[index]} = 1 THEN 1 ELSE 0 END`,
         outStatisticFieldName: `usage_${element.value}`,
         statisticType: "sum"
       }
