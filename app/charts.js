@@ -146,12 +146,12 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
           var start_height = heights[0];
           var end_height = heights[2].substring(0, heights[2].lastIndexOf("m"));
 
-          def_expression_height = "AND Pandhoogte >= " + start_height + " AND Pandhoogte < " + end_height + " ";
+          def_expression_height = "AND MAX_hoogte >= " + start_height + " AND MAX_hoogte < " + end_height + " ";
         }
 
         else {
           var height = heights[1].substring(0, heights[1].lastIndexOf("m"));
-          def_expression_height = "AND Pandhoogte " + heights[0] + " " + height + " ";
+          def_expression_height = "AND MAX_hoogte " + heights[0] + " " + height + " ";
         }
           
         
