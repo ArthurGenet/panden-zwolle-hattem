@@ -44,7 +44,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
 
     const otherStats = {
       onStatisticField:
-        `CASE WHEN ${config.usageField} IN ('${types.join("', '")}') THEN 0 ELSE 1 END`,
+        `CASE WHEN ${config.usageField[0]} IN ('${types.join("', '")}') THEN 0 ELSE 1 END`,
       outStatisticFieldName: "usage_other",
       statisticType: "sum"
     }
