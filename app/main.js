@@ -31,7 +31,7 @@ define([
 
   return {
     init: function () {
-
+      console.log("easy peasy");
       var info = new OAuthInfo({
           // Swap this ID out with a registered application ID
           appId: "nCTVYx63y8WJGjxY",
