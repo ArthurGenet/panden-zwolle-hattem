@@ -87,10 +87,10 @@ define([
             console.log("ok");
             console.log(config.heightField);
             bdgLayer = layer;
-            bdgLayer.popupTemplate = {
-              content: `Dit gebouw is {${config.heightField}}m lang, gebouwd in
-              {${config.yearField}} en het heeft een {${config.usageField}}.`
-            };
+            //bdgLayer.popupTemplate = {
+              //content: `Dit gebouw is {${config.heightField}}m lang, gebouwd in
+              //{${config.yearField}} en het heeft een {${config.usageField}}.`
+            //};
             console.log("ok2");
             //console.log(config.heightField);
             console.log(config.yearField);
