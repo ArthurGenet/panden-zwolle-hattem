@@ -173,7 +173,7 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
     const labels = config.usageValues.map(function (element) {
       return element.label;
     })
-    labels.push("Other");
+    labels.push("Andere");
 
     const backgroundColor = config.usageValues.map(function (element) {
       return element.color;
