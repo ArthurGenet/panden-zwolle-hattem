@@ -14,6 +14,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
   const heightStatDefinitions = generateHeightStatistics();
   console.log(heightStatDefinitions);
   console.log(typeof heightStatDefinitions);
+  console.log(heightStatDefinitions.get("year_1975_1999"));
 
   function generateYearStatistics() {
     return config.yearClasses.map(function (element) {
@@ -46,7 +47,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       console.log(config.usageField[0]);
       return {
         onStatisticField:
-          `CASE WHEN (${config.usageField[index]} > 0) THEN 1 ELSE 0 END`,
+          `CASE WHEN (${config.usageField[index]} = 0) THEN 1 ELSE 0 END`,
         outStatisticFieldName: `usage_${element.value}`,
         statisticType: "sum"
       }
