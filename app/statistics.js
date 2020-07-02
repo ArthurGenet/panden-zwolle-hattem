@@ -42,7 +42,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       console.log(config.usageField[1]);
       return {
         onStatisticField:
-          `CASE WHEN (${config.usageField[index]} LIKE '1') THEN 1 ELSE 0 END`,
+          `CASE WHEN (${config.usageField[0]} = 1) THEN 1 ELSE 0 END`,
         outStatisticFieldName: `usage_${element.value}`,
         statisticType: "sum"
       }
@@ -50,7 +50,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
 
     const otherStats = {
       onStatisticField:
-        `CASE WHEN ${config.usageField[0]} IN ('${types.join("', '")}') OR ${config.usageField[1]} IN ('${types.join("', '")}') THEN 0 ELSE 1 END`,
+        `CASE WHEN ${config.usageField[0]} IN ('${types.join("', '")}') THEN 0 ELSE 1 END`,
       outStatisticFieldName: "usage_other",
       statisticType: "sum"
     }
