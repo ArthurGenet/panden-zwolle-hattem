@@ -49,7 +49,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     
     console.log(types);
 
-	usageStats.push(usageStats2);
+	//usageStats.push(usageStats2);
 
     const otherStats = {
       onStatisticField:
