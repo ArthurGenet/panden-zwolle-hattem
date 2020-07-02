@@ -52,48 +52,37 @@ define([], function () {
       binSize: 5
     },
     usageValues: [{
-      value: "bijeenk",
+      value: "bijeenkomstfunctie",
       color: "#00FFC5",
       label: "Bijeenkomstfunctie"
-  	},
-  	{
-      value: "gezondh",
-      color: "#00FFC5",
-      label: "Bijeenkomstfunctie"
-  	},
-  	{
-      value: "industr",
-      color: "#00FFC5",
-      label: "Bijeenkomstfunctie"
-  	},
-  	{
-      value: "kantoor",
-      color: "#00FFC5",
-      label: "Bijeenkomstfunctie"
-  	},
-  	{
-      value: "logies",
-      color: "#00FFC5",
-      label: "Bijeenkomstfunctie"
-  	},
-  	{
-      value: "onderwi",
-      color: "#00FFC5",
-      label: "Bijeenkomstfunctie"
-
-    
-    },
-    {
-      value: "winkel",
-      color: "#00FFC5",
-      label: "Bijeenkomstfunctie"
-    
-    },
-    {
+    }, {
+      value: "gezondheidszorgfunctie",
+      color: "#E69800",
+      label: "Gezondheidszorgfunctie"
+    }, {
+      value: "industriefunctie",
+      color: "#B53535",
+      label: "Industriefunctie"
+    }, {
+      value: "kantoorfunctie",
+      color: "#8400A8",
+      label: "Kantoorfunctie"
+    }, {
+      value: "logiesfunctie",
+      color: "#376CBD",
+      label: "Logiesfunctie"
+    }, {
+      value: "onderwijsfunctie",
+      color: "#E600A9",
+      label: "Onderwijsfunctie"
+    },  {
+      value: "winkelfunctie",
+      color: "#FFFF00",
+      label: "Winkelfunctie"
+    }, {
       value: "kas",
-      color: "#00FFC5",
-      label: "Bijeenkomstfunctie"
-    
+      color: "#E1E1E1",
+      label: "Kas"
     }]
   }
 });
