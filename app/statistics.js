@@ -38,13 +38,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     console.log("ici");
     var usageStats = config.usageValues.map(function (element) {
       types.push(element.value);
-      index+=1
-      console.log(index);
-      console.log(config.usageField);
-      console.log(config.usageField.length);
-      console.log(element);
-
-      console.log(config.usageField[0]);
+      
       return {
         onStatisticField:
           config.usageField[0],
@@ -52,22 +46,8 @@ define(["app/config", "app/utils"], function (config, appUtils) {
         statisticType: "sum"
       }
     });
-    var usageStats2 = config.usageValues.map(function (element) {
-      types.push(element.value);
-      index+=1
-      console.log(index);
-      console.log(config.usageField);
-      console.log(config.usageField.length);
-      console.log(element);
-
-      console.log(config.usageField[0]);
-      return {
-        onStatisticField:
-          config.usageField[1],
-        outStatisticFieldName: `usage_${element.value}`,
-        statisticType: "sum"
-      }
-    });
+    
+    console.log(types);
 
 	usageStats.push(usageStats2);
 
