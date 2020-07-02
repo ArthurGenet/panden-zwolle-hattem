@@ -14,7 +14,6 @@ define(["app/config", "app/utils"], function (config, appUtils) {
   const heightStatDefinitions = generateHeightStatistics();
   console.log(heightStatDefinitions);
   console.log(typeof heightStatDefinitions);
-  console.log(heightStatDefinitions.get("year_1975_1999"));
 
   function generateYearStatistics() {
     return config.yearClasses.map(function (element) {
@@ -63,7 +62,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     };
     
     
-    usageStats.push(otherStats);
+    //usageStats.push(otherStats);
 
     console.log(usageStats);
     //console.log(usageStats.get('usage_gezondheidszorgfunctie'));
