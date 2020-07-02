@@ -105,7 +105,6 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
     const usageChart = new Chart(usageCanvas.getContext("2d"), {
       type: "doughnut",
       data: {
-        labels: labels,
         datasets: [
           {
             backgroundColor: backgroundColor,
@@ -118,7 +117,7 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
         responsive: false,
         cutoutPercentage: 35,
         legend: {
-          position: "bottom"
+          display: "false"
         },
         title: {
           display: true,

@@ -36,7 +36,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     const types = [];
     var index = -1;
     console.log("ici");
-    var usageStats = config.usageValues.map(function (element) {
+    var usageStats = config.usageValues[0].map(function (element) {
       types.push(element.value);
       index+=1
       console.log(index);
@@ -47,13 +47,81 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       console.log(config.usageField[0]);
       return {
         onStatisticField:
-          config.usageField[index],
+          config.usageField[0],
         outStatisticFieldName: `usage_${element.value}`,
         statisticType: "sum"
       }
     });
-
-
+var usageStats2 = config.usageValues[1].map(function (element) {
+      types.push(element.value);
+      return {
+        onStatisticField:
+          config.usageField[1],
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      }
+    });
+var usageStats3 = config.usageValues[2].map(function (element) {
+      types.push(element.value);
+      return {
+        onStatisticField:
+          config.usageField[2],
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      }
+    });
+var usageStats4 = config.usageValues[3].map(function (element) {
+      types.push(element.value);
+      return {
+        onStatisticField:
+          config.usageField[3],
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      }
+    });
+var usageStats5 = config.usageValues[4].map(function (element) {
+      types.push(element.value);
+      return {
+        onStatisticField:
+          config.usageField[4],
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      }
+    });
+var usageStats6 = config.usageValues[5].map(function (element) {
+      types.push(element.value);
+      return {
+        onStatisticField:
+          config.usageField[5],
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      }
+    });
+var usageStats7 = config.usageValues[6].map(function (element) {
+      types.push(element.value);
+      return {
+        onStatisticField:
+          config.usageField[6],
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      }
+    });
+var usageStats8 = config.usageValues[7].map(function (element) {
+      types.push(element.value);
+      return {
+        onStatisticField:
+          config.usageField[7],
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      }
+    });
+usageStats.push(usageStats2);
+usageStats.push(usageStats3);
+usageStats.push(usageStats4);
+usageStats.push(usageStats5);
+usageStats.push(usageStats6);
+usageStats.push(usageStats7);
+	usageStats.push(usageStats8);
 	
     const otherStats = {
       onStatisticField:
