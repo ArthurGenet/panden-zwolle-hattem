@@ -46,7 +46,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       console.log(config.usageField[0]);
       return {
         onStatisticField:
-          `CASE WHEN (${config.usageField[index]} = 0) THEN 1 ELSE 0 END`,
+          `CASE WHEN ${config.usageField[index]} = 0 THEN 1 ELSE 0 END`,
         outStatisticFieldName: `usage_${element.value}`,
         statisticType: "sum"
       }
@@ -56,16 +56,15 @@ define(["app/config", "app/utils"], function (config, appUtils) {
 	
     const otherStats = {
       onStatisticField:
-        `CASE WHEN ${config.usageField[0]} =1 OR ${config.usageField[1]} =1 OR ${config.usageField[2]} =1 OR ${config.usageField[3]} =1 OR ${config.usageField[4]} =1 OR ${config.usageField[5]} =1 OR ${config.usageField[6]} =1 OR ${config.usageField[7]} =1 THEN 0 ELSE 1 END`,
+        `CASE WHEN (${config.usageField[0]} =1 OR ${config.usageField[1]} =1 OR ${config.usageField[2]} =1 OR ${config.usageField[3]} =1 OR ${config.usageField[4]} =1 OR ${config.usageField[5]} =1 OR ${config.usageField[6]} =1 OR ${config.usageField[7]} =1) THEN 0 ELSE 1 END`,
       outStatisticFieldName: "usage_other",
       statisticType: "sum"
     };
     
     
-    //usageStats.push(otherStats);
+    usageStats.push(otherStats);
 
     console.log(usageStats);
-    //console.log(usageStats.get('usage_gezondheidszorgfunctie'));
 
    
     return usageStats;
