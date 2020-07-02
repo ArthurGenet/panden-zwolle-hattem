@@ -51,11 +51,11 @@ define(["app/config", "app/utils"], function (config, appUtils) {
 	
     const otherStats = {
       onStatisticField:
-        `CASE WHEN ${config.usageField[0]} =1 OR ${config.usageField[1]} =1 OR ${config.usageField[2]} =1 OR ${config.usageField[3]} =1 OR ${config.usageField[4]} =1 OR ${config.usageField[5]} =1 OR ${config.usageField[6]} =1 OR ${config.usageField[7]} =1 THEN 0 ELSE 1 END`,
+        `CASE WHEN ${String(config.usageField[0])} =1 OR ${String(config.usageField[1])} =1 OR ${String(config.usageField[2])} =1 OR ${String(config.usageField[3])} =1 OR ${String(config.usageField[4])} =1 OR ${String(config.usageField[5])} =1 OR ${String(config.usageField[6])} =1 OR ${String(config.usageField[7])} =1 THEN 0 ELSE 1 END`,
       outStatisticFieldName: "usage_other",
       statisticType: "sum"
     }
-    //usageStats.push(otherStats);
+    usageStats.push(otherStats);
 
     console.log(usageStats);
 
