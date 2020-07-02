@@ -75,10 +75,6 @@ define([], function () {
       value: "onderwijsfunctie",
       color: "#E600A9",
       label: "Onderwijsfunctie"
-    }, {
-      value: "overige gebruiksfunctie",
-      color: "#734C00",
-      label: "Overige gebruiksfunctie"
     },  {
       value: "winkelfunctie",
       color: "#FFFF00",
