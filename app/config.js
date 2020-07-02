@@ -4,7 +4,7 @@ define([], function () {
     itemId: "cb15de11a6a9451a9216af35b9ccba75",
     buildingLayerTitle: "Panden",
     heightField: "MAX_hoogte",
-    usageField: ["is_bijeenk","is_gezondh","is_industr","is_kantoor","is_logies", "is_onderwi","is_winkel","is_kas"],
+    usageField: ["is_gezondh","is_bijeenk","is_industr","is_kantoor","is_logies", "is_onderwi","is_winkel","is_kas"],
     yearField: "bouwjaar",
     timeline: {
       bin: 5,
