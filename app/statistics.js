@@ -48,7 +48,6 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       }
     });
 
-    console.log(usageStats.get('usage_gezondheidszorgfunctie'));
     
 	
     const otherStats = {
@@ -62,6 +61,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     usageStats.push(otherStats);
 
     console.log(usageStats);
+    console.log(usageStats.get('usage_gezondheidszorgfunctie'));
 
    
     return usageStats;
