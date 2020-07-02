@@ -32,7 +32,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     const types = [];
     var index = -1;
     console.log("ici");
-    var usageStats = config.usageValues[0].map(function (element) {
+    var usageStats = config.usageValues.map(function (element) {
       types.push(element.value);
       index+=1
       console.log(index);
