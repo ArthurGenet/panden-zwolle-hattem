@@ -52,7 +52,45 @@ define([], function () {
       binSize: 5
     },
     usageValues: [{
-      value: "Pand in gebruik",
+      value: "bijeenk",
+      color: "#00FFC5",
+      label: "Bijeenkomstfunctie"
+  	},
+  	{
+      value: "gezondh",
+      color: "#00FFC5",
+      label: "Bijeenkomstfunctie"
+  	},
+  	{
+      value: "industr",
+      color: "#00FFC5",
+      label: "Bijeenkomstfunctie"
+  	},
+  	{
+      value: "kantoor",
+      color: "#00FFC5",
+      label: "Bijeenkomstfunctie"
+  	},
+  	{
+      value: "logies",
+      color: "#00FFC5",
+      label: "Bijeenkomstfunctie"
+  	},
+  	{
+      value: "onderwi",
+      color: "#00FFC5",
+      label: "Bijeenkomstfunctie"
+
+    
+    },
+    {
+      value: "winkel",
+      color: "#00FFC5",
+      label: "Bijeenkomstfunctie"
+    
+    },
+    {
+      value: "kas",
       color: "#00FFC5",
       label: "Bijeenkomstfunctie"
     
