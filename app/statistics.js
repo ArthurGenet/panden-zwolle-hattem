@@ -12,6 +12,8 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     })
   }
   const heightStatDefinitions = generateHeightStatistics();
+  console.log(heightStatDefinitions);
+  console.log(typeof heightStatDefinitions);
 
   function generateYearStatistics() {
     return config.yearClasses.map(function (element) {
@@ -27,6 +29,8 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     });
   }
   const yearStatDefinitions = generateYearStatistics();
+  console.log(yearStatDefinitions);
+  console.log(typeof yearStatDefinitions);
 
   function generateUsageStatistics() {
     const types = [];
@@ -48,7 +52,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       }
     });
 
-    
+
 	
     const otherStats = {
       onStatisticField:
@@ -61,13 +65,14 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     usageStats.push(otherStats);
 
     console.log(usageStats);
-    console.log(usageStats.get('usage_gezondheidszorgfunctie'));
+    //console.log(usageStats.get('usage_gezondheidszorgfunctie'));
 
    
     return usageStats;
   }
 
   const usageStatDefinitions = generateUsageStatistics();
+  console.log(typeof usageStatDefinitions);
 
   return {
     heightStatDefinitions,
