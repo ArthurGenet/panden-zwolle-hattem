@@ -44,12 +44,12 @@ define(["app/config", "app/utils"], function (config, appUtils) {
 
     const otherStats = {
       onStatisticField:
-        `CASE WHEN ${config.usageField[0]} IN ('${types.join("', '")}') THEN 0 ELSE 1 END`,
+        `CASE WHEN ${config.usageField[0]} IN ('${types.join("', '")}') OR ${config.usageField[1]} IN ('${types.join("', '")}') THEN 0 ELSE 1 END`,
       outStatisticFieldName: "usage_other",
       statisticType: "sum"
     }
     usageStats.push(otherStats);
-    //console.log(usageStats);
+    console.log(usageStats);
     return usageStats;
   }
 
