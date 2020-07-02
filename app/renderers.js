@@ -79,7 +79,7 @@ define([
 
       layer.renderer = {
         type: "unique-value",
-        field: config.usageField,
+        field: config.usageField[0],
         defaultSymbol: {
           type: "mesh-3d",
           symbolLayers: [{
