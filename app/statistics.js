@@ -47,14 +47,74 @@ define(["app/config", "app/utils"], function (config, appUtils) {
         statisticType: "sum"
       }
     });
+
     
+    const usageStats =[];
+    const a = {
+        onStatisticField:
+          `CASE WHEN (${String(config.usageField[0])} LIKE '1') THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      };
+    const b = {
+        onStatisticField:
+          `CASE WHEN (${String(config.usageField[1])} LIKE '1') THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      };
+
+    const c = {
+        onStatisticField:
+          `CASE WHEN (${String(config.usageField[2])} LIKE '1') THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      };
+    const d = {
+        onStatisticField:
+          `CASE WHEN (${String(config.usageField[3])} LIKE '1') THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      };
+    const e = {
+        onStatisticField:
+          `CASE WHEN (${String(config.usageField[4])} LIKE '1') THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      };
+    const f = {
+        onStatisticField:
+          `CASE WHEN (${String(config.usageField[5])} LIKE '1') THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      };
+    const g = {
+        onStatisticField:
+          `CASE WHEN (${String(config.usageField[6])} LIKE '1') THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      };
+    const h = {
+        onStatisticField:
+          `CASE WHEN (${String(config.usageField[7])} LIKE '1') THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      };
 	
     const otherStats = {
       onStatisticField:
         `CASE WHEN ${String(config.usageField[0])} =1 OR ${String(config.usageField[1])} =1 OR ${String(config.usageField[2])} =1 OR ${String(config.usageField[3])} =1 OR ${String(config.usageField[4])} =1 OR ${String(config.usageField[5])} =1 OR ${String(config.usageField[6])} =1 OR ${String(config.usageField[7])} =1 THEN 0 ELSE 1 END`,
       outStatisticFieldName: "usage_other",
       statisticType: "sum"
-    }
+    };
+    usageStats.push(a);
+    usageStats.push(b);
+    usageStats.push(c);
+    usageStats.push(d);
+    usageStats.push(e);
+    usageStats.push(f);
+    usageStats.push(g);
+    usageStats.push(h);
+    
     usageStats.push(otherStats);
 
     console.log(usageStats);
