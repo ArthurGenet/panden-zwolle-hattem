@@ -50,7 +50,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
 
     const otherStats = {
       onStatisticField:
-        `CASE WHEN ${config.usageField[0]} IN ('${types.join("', '")}') OR ${config.usageField[1]} IN ('${types.join("', '")}') OR ${config.usageField[2]} IN ('${types.join("', '")}') OR ${config.usageField[3]} IN ('${types.join("', '")}') OR ${config.usageField[4]} IN ('${types.join("', '")}') OR ${config.usageField[5]} IN ('${types.join("', '")}') OR ${config.usageField[6]} IN ('${types.join("', '")}') OR ${config.usageField[7]} IN ('${types.join("', '")}') THEN 0 ELSE 1 END`,
+        `CASE WHEN ${config.usageField[0]} =1 OR ${config.usageField[1]} =1 OR ${config.usageField[2]} =1 OR ${config.usageField[3]} =1 OR ${config.usageField[4]} =1 OR ${config.usageField[5]} +1 OR ${config.usageField[6]} =1 OR ${config.usageField[7]} =1 THEN 0 ELSE 1 END`,
       outStatisticFieldName: "usage_other",
       statisticType: "sum"
     }
