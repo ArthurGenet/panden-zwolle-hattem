@@ -141,12 +141,14 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
       console.log(allStats);
       const yearValues = statistics.yearStatDefinitions.map(function (element) {
       	console.log(allStats[element.outStatisticFieldName]);
+      	console.log(element);
         return allStats[element.outStatisticFieldName]
       });
       yearChart.data.datasets[0].data = yearValues;
       yearChart.update();
 
       const heightValues = statistics.heightStatDefinitions.map(function (element) {
+      	console.log(element);
         return allStats[element.outStatisticFieldName]
       });
       heightChart.data.datasets[0].data = heightValues;
