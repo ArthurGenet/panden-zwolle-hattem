@@ -32,14 +32,14 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     const types = [];
     var index = -1;
     console.log("ici");
-    const usageStats = config.usageValues.map(function (element) {
+    var usageStats = config.usageValues[0].map(function (element) {
       types.push(element.value);
       index+=1
       console.log(index);
       console.log(config.usageField);
       console.log(config.usageField.length);
 
-      console.log(config.usageField[1]);
+      console.log(config.usageField[0]);
       return {
         onStatisticField:
           `CASE WHEN (${config.usageField[index]} = 1) THEN 1 ELSE 0 END`,
@@ -47,10 +47,11 @@ define(["app/config", "app/utils"], function (config, appUtils) {
         statisticType: "sum"
       }
     });
+    
 
     const otherStats = {
       onStatisticField:
-        `CASE WHEN ${config.usageField[0]} =1 OR ${config.usageField[1]} =1 OR ${config.usageField[2]} =1 OR ${config.usageField[3]} =1 OR ${config.usageField[4]} =1 OR ${config.usageField[5]} +1 OR ${config.usageField[6]} =1 OR ${config.usageField[7]} =1 THEN 0 ELSE 1 END`,
+        `CASE WHEN ${config.usageField[0]} =1 OR ${config.usageField[1]} =1 OR ${config.usageField[2]} =1 OR ${config.usageField[3]} =1 OR ${config.usageField[4]} =1 OR ${config.usageField[5]} =1 OR ${config.usageField[6]} =1 OR ${config.usageField[7]} =1 THEN 0 ELSE 1 END`,
       outStatisticFieldName: "usage_other",
       statisticType: "sum"
     }
