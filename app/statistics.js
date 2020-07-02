@@ -48,7 +48,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       }
     });
     
-	usageStats
+	
     const otherStats = {
       onStatisticField:
         `CASE WHEN ${config.usageField[0]} =1 OR ${config.usageField[1]} =1 OR ${config.usageField[2]} =1 OR ${config.usageField[3]} =1 OR ${config.usageField[4]} =1 OR ${config.usageField[5]} =1 OR ${config.usageField[6]} =1 OR ${config.usageField[7]} =1 THEN 0 ELSE 1 END`,
@@ -56,7 +56,9 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       statisticType: "sum"
     }
     usageStats.push(otherStats);
+
     console.log(usageStats);
+    
     usageStats2 = [{onStatisticField: "CASE WHEN (is_bijeenk = 1) THEN 1 ELSE 0 END", outStatisticFieldName: "usage_bijeenkomstfunctie", statisticType: "sum"},{onStatisticField: "CASE WHEN (is_gezondh = 1) THEN 1 ELSE 0 END", outStatisticFieldName: "usage_gezondheidszorgfunctie", statisticType: "sum"},{onStatisticField: "CASE WHEN (is_industr = 1) THEN 1 ELSE 0 END", outStatisticFieldName: "usage_industriefunctie", statisticType: "sum"},{onStatisticField: "CASE WHEN (is_kantoor = 1) THEN 1 ELSE 0 END", outStatisticFieldName: "usage_kantoorfunctie", statisticType: "sum"},{onStatisticField: "CASE WHEN (is_logies = 1) THEN 1 ELSE 0 END", outStatisticFieldName: "usage_logiesfunctie", statisticType: "sum"},{onStatisticField: "CASE WHEN (is_onderwi = 1) THEN 1 ELSE 0 END", outStatisticFieldName: "usage_onderwijsfunctie", statisticType: "sum"},{onStatisticField: "CASE WHEN (is_winkel = 1) THEN 1 ELSE 0 END", outStatisticFieldName: "usage_winkelfunctie", statisticType: "sum"},{onStatisticField: "CASE WHEN (is_kas = 1) THEN 1 ELSE 0 END", outStatisticFieldName: "usage_kas", statisticType: "sum"},{
       onStatisticField:
         `CASE WHEN ${config.usageField[0]} =1 OR ${config.usageField[1]} =1 OR ${config.usageField[2]} =1 OR ${config.usageField[3]} =1 OR ${config.usageField[4]} =1 OR ${config.usageField[5]} =1 OR ${config.usageField[6]} =1 OR ${config.usageField[7]} =1 THEN 0 ELSE 1 END`,
