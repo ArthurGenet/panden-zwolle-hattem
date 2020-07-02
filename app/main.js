@@ -211,9 +211,7 @@ define([
         renderers.applyHeightRenderer(bdgLayer);
       });
 
-      document.getElementById("applyUsageRenderer").addEventListener("click", function () {
-        renderers.applyUsageRenderer(bdgLayer);
-      });
+      
 
       document.getElementById("clearRenderer").addEventListener("click", function () {
         renderers.applyOriginalTexture(bdgLayer);
