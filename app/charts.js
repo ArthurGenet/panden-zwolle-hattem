@@ -94,7 +94,7 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
     const labels = config.usageValues.map(function (element) {
       return element.label;
     })
-    labels.push("Other");
+    //labels.push("Other");
 
     const backgroundColor = config.usageValues.map(function (element) {
       return element.color;
