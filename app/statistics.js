@@ -31,10 +31,12 @@ define(["app/config", "app/utils"], function (config, appUtils) {
   function generateUsageStatistics() {
     const types = [];
     var index = -1;
+    console.log("ici");
     const usageStats = config.usageValues.map(function (element) {
       types.push(element.value);
       index+=1
       console.log(index);
+      console.log(config.usageField[index]);
       return {
         onStatisticField:
           `CASE WHEN ${config.usageField[index]} = 1 THEN 1 ELSE 0 END`,
