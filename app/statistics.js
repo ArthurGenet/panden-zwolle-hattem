@@ -34,6 +34,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     const usageStats = config.usageValues.map(function (element) {
       types.push(element.value);
       index+=1
+      console.log(index);
       return {
         onStatisticField:
           `CASE WHEN ${config.usageField[index]} = 1 THEN 1 ELSE 0 END`,
