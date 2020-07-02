@@ -36,7 +36,10 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       types.push(element.value);
       index+=1
       console.log(index);
-      console.log(config.usageField[index]);
+      console.log(config.usageField);
+      console.log(config.usageField.length);
+
+      console.log(config.usageField[1]);
       return {
         onStatisticField:
           `CASE WHEN ${config.usageField[index]} = 1 THEN 1 ELSE 0 END`,
