@@ -42,6 +42,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       console.log(index);
       console.log(config.usageField);
       console.log(config.usageField.length);
+      console.log(element);
 
       console.log(config.usageField[0]);
       return {

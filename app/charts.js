@@ -161,6 +161,7 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
         return allStats[element.outStatisticFieldName]
       });
       console.log(usageValues);
+      usageValues =[10,20,30,40,50,60,70,80,90];
       usageChart.data.datasets[0].data = usageValues;
       usageChart.update();
     }
