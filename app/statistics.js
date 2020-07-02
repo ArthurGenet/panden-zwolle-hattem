@@ -46,7 +46,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       console.log(config.usageField[0]);
       return {
         onStatisticField:
-          `CASE WHEN ${config.usageField[index]} = 0 THEN 1 ELSE 0 END`,
+          `CASE WHEN is_onderwi = 1 THEN 1 ELSE 0 END`,
         outStatisticFieldName: `usage_${element.value}`,
         statisticType: "sum"
       }
@@ -72,6 +72,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
 
   const usageStatDefinitions = generateUsageStatistics();
   console.log(typeof usageStatDefinitions);
+  console.log(usageStatDefinitions);
 
   return {
     heightStatDefinitions,

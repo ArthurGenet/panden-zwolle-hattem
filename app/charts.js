@@ -160,6 +160,7 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
       	console.log(allStats[element.outStatisticFieldName]);
         return allStats[element.outStatisticFieldName]
       });
+      console.log(usageValues);
       usageChart.data.datasets[0].data = usageValues;
       usageChart.update();
     }
