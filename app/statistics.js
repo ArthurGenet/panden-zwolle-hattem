@@ -47,7 +47,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       console.log(config.usageField[0]);
       return {
         onStatisticField:
-          `CASE WHEN is_logies = 1 THEN 1 ELSE 0 END`,
+          config.usageField[index],
         outStatisticFieldName: `usage_${element.value}`,
         statisticType: "sum"
       }
