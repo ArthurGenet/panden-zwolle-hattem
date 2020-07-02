@@ -42,7 +42,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       console.log(config.usageField[1]);
       return {
         onStatisticField:
-          `CASE WHEN (${config.usageField[index]} = 1) THEN 1 ELSE 0 END`,
+          `CASE WHEN (${config.usageField[index]} LIKE '1') THEN 1 ELSE 0 END`,
         outStatisticFieldName: `usage_${element.value}`,
         statisticType: "sum"
       }
