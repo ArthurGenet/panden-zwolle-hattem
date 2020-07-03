@@ -62,7 +62,7 @@ define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
 
     const otherStats = {
       onStatisticField:
-        `CASE WHEN (pandstatus = 'Pand in gebruik')  THEN 1 ELSE 0 END`,
+        `CASE WHEN (pandstatus LIKE 'Pand in gebruik')  THEN 1 ELSE 0 END`,
       outStatisticFieldName: "usage_other",
       statisticType: "sum"
     };
