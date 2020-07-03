@@ -8,16 +8,7 @@ function defExpression(date_expression, height_expression, usage_expression){
   bdgLayer.definitionExpression = def_expression;
 }
 
-function test(statDefinitions){
-	const query = view.layer.createQuery();
-          query.outStatistics = statDefinitions;
-          query.geometry = view.extent;
-    console.log(statDefinitions);
 
-	view.queryFeatures(query).then(function(response) {
-		return statDefinitions;
-	});
-}
 
 
 define([
@@ -237,6 +228,15 @@ define([
       }
     }
   }
+function test(statDefinitions){
+	const query = view.layer.createQuery();
+          query.outStatistics = statDefinitions;
+          query.geometry = view.extent;
+    console.log(statDefinitions);
 
+	view.queryFeatures(query).then(function(response) {
+		return statDefinitions;
+	});
+}
 });
 
