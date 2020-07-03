@@ -34,7 +34,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       types.push(element.value);
       return {
         onStatisticField:
-          `CASE WHEN ${config.usageField[0]} = ${element.value} THEN 1 ELSE 0 END`,
+          `CASE WHEN ${config.usageField} = ${element.value} THEN 1 ELSE 0 END`,
         outStatisticFieldName: `usage_${element.value}`,
         statisticType: "sum"
       }
@@ -46,7 +46,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       outStatisticFieldName: "usage_other",
       statisticType: "sum"
     }
-    //usageStats.push(otherStats);
+    usageStats.push(otherStats);
     return usageStats;
   }
 
