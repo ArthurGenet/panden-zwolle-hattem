@@ -52,35 +52,35 @@ define([], function () {
       binSize: 5
     },
     usageValues: [{
-      value: "bijeenkomstfunctie",
+      value: "is_bijeenk",
       color: "#00FFC5",
       label: "Bijeenkomstfunctie"
     }, {
-      value: "gezondheidszorgfunctie",
+      value: "is_gezondh",
       color: "#E69800",
       label: "Gezondheidszorgfunctie"
     }, {
-      value: "industriefunctie",
+      value: "is_industr",
       color: "#B53535",
       label: "Industriefunctie"
     }, {
-      value: "kantoorfunctie",
+      value: "is_kantoor",
       color: "#8400A8",
       label: "Kantoorfunctie"
     }, {
-      value: "logiesfunctie",
+      value: "is_logies",
       color: "#376CBD",
       label: "Logiesfunctie"
     }, {
-      value: "onderwijsfunctie",
+      value: "is_onderwi",
       color: "#E600A9",
       label: "Onderwijsfunctie"
     },  {
-      value: "winkelfunctie",
+      value: "is_winkel",
       color: "#FFFF00",
       label: "Winkelfunctie"
     }, {
-      value: "kas",
+      value: "is_kas",
       color: "#E1E1E1",
       label: "Kas"
     }]
