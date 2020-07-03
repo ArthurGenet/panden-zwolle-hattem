@@ -35,11 +35,13 @@ define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
 
   function generateUsageStatistics() {
     return config.usageValues.map(function (element) {
+      const min = 5;
+      const max = 30;
 
       return {
         onStatisticField:
-          `CASE WHEN (is_bijeenk = 1) THEN 1 ELSE 0 END`,
-        outStatisticFieldName: `usage_${element.value}`,
+          `CASE WHEN (${config.yearField} >= ${min} AND ${config.yearField} < ${max}) THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `year_${min}_${max}`,
         statisticType: "sum"
       }
     });
