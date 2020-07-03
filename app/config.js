@@ -56,7 +56,7 @@ define([], function () {
       color: "#00FFC5",
       label: "Bijeenkomstfunctie"
     }, {
-      value: "is_gezondh",
+      value: "0",
       color: "#E69800",
       label: "Gezondheidszorgfunctie"
     }, {
