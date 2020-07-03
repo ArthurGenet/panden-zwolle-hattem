@@ -231,7 +231,7 @@ define([
 
 });
 function test(statDefinitions){
-	const query = view.layer.createQuery();
+	const query = bdgLayer.createQuery();
           query.outStatistics = statDefinitions;
           query.geometry = view.extent;
     console.log(statDefinitions);
