@@ -22,7 +22,7 @@ define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
 
       return {
         onStatisticField:
-          `CASE WHEN (${config.yearField} >= ${min} AND ${config.yearField} < ${max}) THEN 1 ELSE 0 END`,
+          `CASE WHEN (bouwjaar >= ${min} AND bouwjaar < ${max}) THEN 1 ELSE 0 END`,
         outStatisticFieldName: `year_${min}_${max}`,
         statisticType: "sum"
       }
@@ -40,7 +40,7 @@ define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
       types.push(element.value);
       
       return {
-        onStatisticField: `CASE WHEN (${config.yearField} >= 1000 AND ${config.yearField} < 2000) THEN 1 ELSE 0 END`,
+        onStatisticField: 'CASE WHEN bouwjaar = 2001 THEN 0 ELSE 1 END',
         outStatisticFieldName: `usage_${element.value}`,
         statisticType: "sum"
       }
