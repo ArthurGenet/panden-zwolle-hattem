@@ -1,5 +1,6 @@
 let bdgLayer = null;
 let bdgLayerView = null;
+let view = null;
 
 function defExpression(date_expression, height_expression, usage_expression){
   def_expression = date_expression+height_expression+usage_expression;
@@ -85,7 +86,7 @@ define([
         }
       });
 
-      const view = new SceneView({
+       view = new SceneView({
         container: "viewDiv",
         qualityProfile: "high",
         map: webscene
