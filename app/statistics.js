@@ -31,11 +31,18 @@ define(["app/config", "app/utils"], function (config, appUtils) {
   function generateUsageStatistics() {
     const types = [];
     const usageStats = config.usageValues.map(function (element) {
-      types.push(element.value);
-      const nombre = element.value;
       return {
         onStatisticField:
           `CASE WHEN ${config.usageField} = 1 THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      }
+    });
+
+    const usageStats = config.usageValues2.map(function (element) {
+      return {
+        onStatisticField:
+          `CASE WHEN ${config.usageField2} = 1 THEN 1 ELSE 0 END`,
         outStatisticFieldName: `usage_${element.value}`,
         statisticType: "sum"
       }

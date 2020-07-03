@@ -5,6 +5,7 @@ define([], function () {
     buildingLayerTitle: "Panden",
     heightField: "MAX_hoogte",
     usageField: "is_bijeenk",
+    usageField2: "is_gezondh",
     yearField: "bouwjaar",
     timeline: {
       bin: 5,
@@ -56,6 +57,14 @@ define([], function () {
       color: "#00FFC5",
       label: "Bijeenkomstfunctie"
     }],
+    usageValues2:[{
+      value: "gezondheidszorgfunctie",
+      color: "#E69800",
+      label: "Gezondheidszorgfunctie"
+    }],
+
+
+
     usage: [{
       value: "gezondheidszorgfunctie",
       color: "#E69800",
