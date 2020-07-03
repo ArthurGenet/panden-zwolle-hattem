@@ -42,7 +42,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     const usageStats2 =  {
         onStatisticField:
           `CASE WHEN ${config.usageField2} = 1 THEN 1 ELSE 0 END`,
-        outStatisticFieldName: `usage_${element.value}`,
+        outStatisticFieldName: `usage_${config.usageValues2.value}`,
         statisticType: "sum"
       };
 	usageStats.push(usageStats2);
