@@ -39,6 +39,15 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       }
     });
 
+    const usageStats2 = config.usageValues2.map(function (element) {
+      return {
+        onStatisticField:
+          `CASE WHEN ${config.usageField2} = 1 THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      }
+    });
+	usageStats.push(usageStats2);
 
 
     const otherStats = {
@@ -48,27 +57,10 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       statisticType: "sum"
     }
     usageStats.push(otherStats);
-    console.log(usageStats);
     return usageStats;
   }
 
   const usageStatDefinitions = generateUsageStatistics();
-
-
-function generateUsageStatistics2() {
-
-const usageStats2 = config.usageValues2.map(function (element) {
-      return {
-        onStatisticField:
-          `CASE WHEN ${config.usageField2} = 1 THEN 1 ELSE 0 END`,
-        outStatisticFieldName: `usage_${element.value}`,
-        statisticType: "sum"
-      }
-    });
-    return usageStats2;
-
-}
-  const usageStatDefinitions = generateUsageStatistics2();
 
   return {
     heightStatDefinitions,

@@ -180,11 +180,51 @@ define([
       });
 
       const debouncedRunQuery = promiseUtils.debounce(function () {
+      	function oklm(){
+
+
+          const educationFields = [
+            "is_bijeenk"
+          ];
+
+          // Creates a query object for statistics of each of the fields listed above
+          const statDefinitions = educationFields.map(function(fieldName) {
+            return {
+              onStatisticField: fieldName,
+              outStatisticFieldName: fieldName + "_TOTAL",
+              statisticType: "sum"
+            };
+          });
+
+          // query statistics for features only in view extent
+          const query = bdgLayerView.layer.createQuery();
+          query.outStatistics = statDefinitions;
+          query.geometry = view.extent;
+
+          // query features within the view's extent on the client
+          return bdgLayerView.queryFeatures(query).then(function(response) {
+            const stats = response.features[0].attributes;
+
+            const updatedData = [
+              stats.is_bijeenk // no school
+              
+            ];
+          console.log(updatedData);
+            // data used to update the pie chart
+            return 
+              // total population 12+
+          updatedData
+            
+          })};
+          
+       oklm();
+
         const query = bdgLayerView.createQuery();
         query.geometry = appState.filterGeometry;
         query.outStatistics = statistics.totalStatDefinitions;
         return bdgLayerView.queryFeatures(query).then(charts.updateCharts);
       });
+
 
       function runQuery() {
         debouncedRunQuery().catch((error) => {
@@ -230,14 +270,3 @@ define([
   }
 
 });
-function test(statDefinitions){
-	const query = bdgLayer.createQuery();
-          query.outStatistics = statDefinitions;
-          query.geometry = view.extent;
-    console.log(statDefinitions);
-
-	view.queryFeatures(query).then(function(response) {
-		return statDefinitions;
-	});
-}
-

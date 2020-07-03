@@ -156,13 +156,11 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
       	console.log(allStats[element.outStatisticFieldName])
         return allStats[element.outStatisticFieldName]
       });
-      const usageValues2 = statistics.usageStatDefinitions2.map(function (element) {
-      	console.log(element);
-      	console.log(allStats[element.outStatisticFieldName])
-        return allStats[element.outStatisticFieldName]
-      });
+
+
+
       console.log(usageValues);
-      usageChart.data.datasets[0].data = usageValues.concat(usageValues2);
+      usageChart.data.datasets[0].data = usageValues;
       usageChart.update();
     }
   }
