@@ -40,7 +40,7 @@ define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
       types.push(element.value);
       
       return {
-        onStatisticField: 'CASE WHEN bouwjaar = 2001 THEN 0 ELSE 1 END',
+        onStatisticField: `CASE WHEN (${config.yearField} >= 1000 AND ${config.yearField} < 2000) THEN 1 ELSE 0 END`,
         outStatisticFieldName: `usage_${element.value}`,
         statisticType: "sum"
       }
