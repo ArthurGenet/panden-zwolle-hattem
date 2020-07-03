@@ -55,7 +55,8 @@ define([], function () {
       value: "bijeenkomstfunctie",
       color: "#00FFC5",
       label: "Bijeenkomstfunctie"
-    }, {
+    }],
+    usage: [{
       value: "gezondheidszorgfunctie",
       color: "#E69800",
       label: "Gezondheidszorgfunctie"
