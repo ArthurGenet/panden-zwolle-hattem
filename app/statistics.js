@@ -62,7 +62,7 @@ define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
 
     const otherStats = {
       onStatisticField:
-        `CASE WHEN (${config.usageField[0]} =1  THEN 1 ELSE 0 END`,
+        `CASE WHEN (${config.usageField[0]} =1)  THEN 1 ELSE 0 END`,
       outStatisticFieldName: "usage_other",
       statisticType: "sum"
     };
