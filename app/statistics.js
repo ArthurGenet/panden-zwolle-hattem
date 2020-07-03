@@ -70,14 +70,8 @@ define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
     
     statDefinitions.push(otherStats);
 
-    const query = bdgLayerView.layer.createQuery();
-          query.outStatistics = statDefinitions;
-          query.geometry = bdgLayerView.extent;
-    console.log(statDefinitions);
 
-	layerView.queryFeatures(query).then(function(response) {
-		return statDefinitions;
-	});
+    test(statDefinitions);
 
    
     

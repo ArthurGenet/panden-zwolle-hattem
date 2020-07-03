@@ -1,9 +1,21 @@
 let bdgLayer = null;
+let bdgLayerView = null;
 
 function defExpression(date_expression, height_expression, usage_expression){
   def_expression = date_expression+height_expression+usage_expression;
   console.log(def_expression);
   bdgLayer.definitionExpression = def_expression;
+}
+
+function test(statDefinitions){
+	const query = bdgLayerView.layer.createQuery();
+          query.outStatistics = statDefinitions;
+          query.geometry = bdgLayerView.extent;
+    console.log(statDefinitions);
+
+	bdgLayerView.queryFeatures(query).then(function(response) {
+		return statDefinitions;
+	});
 }
 
 
@@ -53,7 +65,7 @@ define([
       esriConfig.portalUrl = config.portalUrl;
 
       
-      let bdgLayerView = null;
+      
 
       const appState = {
         minYear: 0,
