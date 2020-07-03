@@ -138,7 +138,7 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
     usageChart,
     updateCharts(result) {
       const allStats = result.features[0].attributes;
-
+      console.log(allStats);
       const yearValues = statistics.yearStatDefinitions.map(function (element) {
         return allStats[element.outStatisticFieldName]
       });
