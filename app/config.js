@@ -4,7 +4,7 @@ define([], function () {
     itemId: "cb15de11a6a9451a9216af35b9ccba75",
     buildingLayerTitle: "Panden",
     heightField: "MAX_hoogte",
-    usageField: ["is_bijeenk","is_gezondh","is_industr","is_kantoor","is_logies", "is_onderwi","is_winkel","is_kas"],
+    usageField: "is_bijeenk",
     yearField: "bouwjaar",
     timeline: {
       bin: 5,
@@ -55,6 +55,34 @@ define([], function () {
       value: "bijeenkomstfunctie",
       color: "#00FFC5",
       label: "Bijeenkomstfunctie"
+    }, {
+      value: "gezondheidszorgfunctie",
+      color: "#E69800",
+      label: "Gezondheidszorgfunctie"
+    }, {
+      value: "industriefunctie",
+      color: "#B53535",
+      label: "Industriefunctie"
+    }, {
+      value: "kantoorfunctie",
+      color: "#8400A8",
+      label: "Kantoorfunctie"
+    }, {
+      value: "logiesfunctie",
+      color: "#376CBD",
+      label: "Logiesfunctie"
+    }, {
+      value: "onderwijsfunctie",
+      color: "#E600A9",
+      label: "Onderwijsfunctie"
+    },  {
+      value: "winkelfunctie",
+      color: "#FFFF00",
+      label: "Winkelfunctie"
+    }, {
+      value: "kas",
+      color: "#E1E1E1",
+      label: "Kas"
     }]
   }
 });
