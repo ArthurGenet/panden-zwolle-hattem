@@ -22,7 +22,7 @@ define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
 
       return {
         onStatisticField:
-          `CASE WHEN (bouwjaar >= 5 AND bouwjaar < 1899) THEN 1 ELSE 0 END`,
+          `CASE WHEN (${config.yearField} >= ${min} AND ${config.yearField} < ${max}) THEN 1 ELSE 0 END`,
         outStatisticFieldName: `year_${min}_${max}`,
         statisticType: "sum"
       }
@@ -32,7 +32,22 @@ define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
   console.log(yearStatDefinitions);
   console.log(typeof yearStatDefinitions);
 
+
   function generateUsageStatistics() {
+    return config.usageValues.map(function (element) {
+
+      return {
+        onStatisticField:
+          `CASE WHEN (is_bijeenk = 1) THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${element.value}`,
+        statisticType: "sum"
+      }
+    });
+  }
+
+
+
+  function generateUsageStatistics2() {
     const types = [];
     var index = -1;
     console.log("ici");
