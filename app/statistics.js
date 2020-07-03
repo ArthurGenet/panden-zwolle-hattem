@@ -47,7 +47,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       outStatisticFieldName: "usage_other",
       statisticType: "sum"
     }
-    usageStats.push(otherStats);
+    //usageStats.push(otherStats);
     return usageStats;
   }
 
