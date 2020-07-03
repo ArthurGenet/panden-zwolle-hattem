@@ -1,4 +1,4 @@
-define(["app/config", "app/utils"], function (config, appUtils) {
+define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
 
   function generateHeightStatistics() {
     const heightBins = appUtils.heightBins;
@@ -70,10 +70,17 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     
     statDefinitions.push(otherStats);
 
+    const query = bdgLayerView.layer.createQuery();
+          query.outStatistics = statDefinitions;
+          query.geometry = bdgLayerView.extent;
     console.log(statDefinitions);
 
+	layerView.queryFeatures(query).then(function(response) {
+		return statDefinitions;
+	});
+
    
-    return statDefinitions;
+    
   }
 
   const usageStatDefinitions = generateUsageStatistics();
