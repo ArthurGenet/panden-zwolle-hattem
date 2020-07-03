@@ -53,7 +53,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
 
     const statDefinitions = config.usageField.map(function(fieldName) {
             return {
-              onStatisticField: fieldName,
+              onStatisticField: 'CASE WHEN '+fieldName+' = 1 THEN 1 ELSE 0 END',
               outStatisticFieldName: "usage_"+fieldName ,
               statisticType: "sum"
             };
@@ -70,7 +70,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     
     statDefinitions.push(otherStats);
 
-    console.log(usageStats);
+    console.log(statDefinitions);
 
    
     return statDefinitions;
