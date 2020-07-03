@@ -34,7 +34,7 @@ define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
 
 
   function generateUsageStatistics() {
-    return config.usageValues.map(function (element) {
+    return config.yearClasses.map(function (element) {
       const min = 5;
       const max = 2000;
 
