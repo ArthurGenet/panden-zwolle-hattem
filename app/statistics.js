@@ -47,7 +47,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
         statisticType: "sum"
       }
     });
-usageStats.push(usageStats2);
+	usageStats.push(usageStats2);
 
 
     const otherStats = {
@@ -57,6 +57,7 @@ usageStats.push(usageStats2);
       statisticType: "sum"
     }
     usageStats.push(otherStats);
+    console.log(usageStats);
     return usageStats;
   }
 
