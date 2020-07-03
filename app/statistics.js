@@ -22,7 +22,7 @@ define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
 
       return {
         onStatisticField:
-          `CASE WHEN (bouwjaar >= ${min} AND bouwjaar < ${max}) THEN 1 ELSE 0 END`,
+          `CASE WHEN (bouwjaar >= 5 AND bouwjaar < 1899) THEN 1 ELSE 0 END`,
         outStatisticFieldName: `year_${min}_${max}`,
         statisticType: "sum"
       }
