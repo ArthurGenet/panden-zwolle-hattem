@@ -41,7 +41,7 @@ define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
       return {
         onStatisticField:
           `CASE WHEN (${config.yearField} >= ${min} AND ${config.yearField} < ${max}) THEN 1 ELSE 0 END`,
-        outStatisticFieldName: `year_${min}_${max}`,
+        outStatisticFieldName: `usage_${min}_${max}`,
         statisticType: "sum"
       }
     });
