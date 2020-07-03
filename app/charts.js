@@ -138,31 +138,22 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
     usageChart,
     updateCharts(result) {
       const allStats = result.features[0].attributes;
-      console.log(allStats);
+
       const yearValues = statistics.yearStatDefinitions.map(function (element) {
-      	console.log(allStats[element.outStatisticFieldName]);
-      	console.log(element);
         return allStats[element.outStatisticFieldName]
       });
       yearChart.data.datasets[0].data = yearValues;
       yearChart.update();
 
       const heightValues = statistics.heightStatDefinitions.map(function (element) {
-      	console.log(element);
         return allStats[element.outStatisticFieldName]
       });
       heightChart.data.datasets[0].data = heightValues;
       heightChart.update();
 
-      var usageValues = statistics.usageStatDefinitions.map(function (element) {
-      	console.log(element);
-      	console.log(element.outStatisticFieldName);
-      	console.log(allStats[element.outStatisticFieldName]);
+      const usageValues = statistics.usageStatDefinitions.map(function (element) {
         return allStats[element.outStatisticFieldName]
       });
-      console.log(usageValues);
-      //usageValues = statistics.usageStatDefinitions;
-      //usageValues =[10,20,30,40,50,60,70,80,90];
       usageChart.data.datasets[0].data = usageValues;
       usageChart.update();
     }
