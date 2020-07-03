@@ -47,8 +47,17 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       }
     });
     
+
     console.log(types);
 
+
+    const statDefinitions = config.usageField.map(function(fieldName) {
+            return {
+              onStatisticField: fieldName,
+              outStatisticFieldName: "usage_"+fieldName ,
+              statisticType: "sum"
+            };
+          });
 	//usageStats.push(usageStats2);
 
     const otherStats = {
@@ -59,12 +68,12 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     };
     
     
-    usageStats.push(otherStats);
+    statDefinitions.push(otherStats);
 
     console.log(usageStats);
 
    
-    return usageStats;
+    return statDefinitions;
   }
 
   const usageStatDefinitions = generateUsageStatistics();
