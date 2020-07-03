@@ -228,6 +228,8 @@ define([
       }
     }
   }
+
+});
 function test(statDefinitions){
 	const query = view.layer.createQuery();
           query.outStatistics = statDefinitions;
@@ -238,5 +240,4 @@ function test(statDefinitions){
 		return statDefinitions;
 	});
 }
-});
 
