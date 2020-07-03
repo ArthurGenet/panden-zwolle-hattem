@@ -8,12 +8,12 @@ function defExpression(date_expression, height_expression, usage_expression){
 }
 
 function test(statDefinitions){
-	const query = bdgLayerView.layer.createQuery();
+	const query = view.layer.createQuery();
           query.outStatistics = statDefinitions;
-          query.geometry = bdgLayerView.extent;
+          query.geometry = view.extent;
     console.log(statDefinitions);
 
-	bdgLayerView.queryFeatures(query).then(function(response) {
+	view.queryFeatures(query).then(function(response) {
 		return statDefinitions;
 	});
 }
