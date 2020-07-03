@@ -40,7 +40,7 @@ define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
       types.push(element.value);
       
       return {
-        onStatisticField: 'CASE WHEN bouwjaar = 2001 THEN 1 ELSE 0 END',
+        onStatisticField: 'CASE WHEN bouwjaar = 2001 THEN 0 ELSE 1 END',
         outStatisticFieldName: `usage_${element.value}`,
         statisticType: "sum"
       }
@@ -67,7 +67,7 @@ define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
     };
     
     
-    //usageStats.push(otherStats);
+    usageStats.push(otherStats);
 
     console.log(usageStats);
     return usageStats;
