@@ -152,8 +152,11 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
       heightChart.update();
 
       const usageValues = statistics.usageStatDefinitions.map(function (element) {
+      	console.log(element);
+      	console.log(allStats[element.outStatisticFieldName])
         return allStats[element.outStatisticFieldName]
       });
+      console.log(usageValues);
       usageChart.data.datasets[0].data = usageValues;
       usageChart.update();
     }

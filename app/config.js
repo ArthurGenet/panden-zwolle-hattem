@@ -64,7 +64,7 @@ define([], function () {
       color: "#B53535",
       label: "Industriefunctie"
     }, {
-      value: "is_kantoor",
+      value: "1",
       color: "#8400A8",
       label: "Kantoorfunctie"
     }, {
