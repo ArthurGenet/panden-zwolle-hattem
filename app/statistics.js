@@ -41,7 +41,7 @@ define(["app/config", "app/utils", "app/main"], function (config, appUtils) {
       
       return {
         onStatisticField:
-          'CASE WHEN '+element.value+' = 1 THEN 1 ELSE 0',
+          'CASE WHEN '+element.value+' = 1 THEN 1 ELSE 0 END',
         outStatisticFieldName: `usage_${element.value}`,
         statisticType: "sum"
       }
