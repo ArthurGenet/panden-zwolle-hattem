@@ -39,7 +39,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       }
     });
 
-    const usageStats = config.usageValues2.map(function (element) {
+    const usageStats2 = config.usageValues2.map(function (element) {
       return {
         onStatisticField:
           `CASE WHEN ${config.usageField2} = 1 THEN 1 ELSE 0 END`,
@@ -47,6 +47,8 @@ define(["app/config", "app/utils"], function (config, appUtils) {
         statisticType: "sum"
       }
     });
+
+
 
     const otherStats = {
       onStatisticField:
