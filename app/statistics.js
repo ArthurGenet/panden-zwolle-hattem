@@ -60,12 +60,13 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     return usageStats;
   }
 
-  const usageStatDefinitions = generateUsageStatistics();
+  //const usageStatDefinitions = generateUsageStatistics();
 
   return {
     heightStatDefinitions,
     yearStatDefinitions,
-    usageStatDefinitions,
-    totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(usageStatDefinitions)
+    //usageStatDefinitions,
+    //totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(usageStatDefinitions)
+    totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions)
   };
 });
