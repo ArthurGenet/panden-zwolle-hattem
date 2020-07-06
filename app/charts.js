@@ -69,7 +69,7 @@ function createAreaChart() {
         },
         title: {
           display: true,
-          text: "Number of buildings by construction year"
+          text: "Number of buildings by area"
         },
         scales: {
           xAxes: [

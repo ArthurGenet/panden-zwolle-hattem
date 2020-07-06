@@ -55,34 +55,34 @@ define([], function () {
     },
     areaClasses: [{
       minArea: 0,
-      maxArea: 250,
+      maxArea: 50,
       color: "#bd0026",
-      label: "<1900"
+      label: "<50"
     }, {
-      minArea: 250,
-      maxArea: 500,
+      minArea: 50,
+      maxArea: 100,
       color: "#f03b20",
-      label: "1900 - 1924"
+      label: "50 - 100"
+    }, {
+      minArea: 100,
+      maxArea: 200,
+      color: "#fd8d3c",
+      label: "100 - 200"
+    }, {
+      minArea: 200,
+      maxArea: 350,
+      color: "#feb24c",
+      label: "200 - 350"
+    }, {
+      minArea: 350,
+      maxArea: 500,
+      color: "#fed976",
+      label: "350 - 500"
     }, {
       minArea: 500,
-      maxArea: 1000,
-      color: "#fd8d3c",
-      label: "1925 - 1949"
-    }, {
-      minArea: 1000,
-      maxArea: 1500,
-      color: "#feb24c",
-      label: "1951 - 1974"
-    }, {
-      minArea: 1500,
-      maxArea: 2000,
-      color: "#fed976",
-      label: "1975 - 1999"
-    }, {
-      minArea: 2000,
-      maxArea: 100000,
+      maxArea: 100000000,
       color: "#ffffb2",
-      label: "2000 - 2020"
+      label: ">500"
     }],
     usageValues: [{
       value: "bijeenkomstfunctie",
