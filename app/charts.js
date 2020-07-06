@@ -141,7 +141,7 @@ function statsf (usage_array){
   return {
     yearChart,
     heightChart,
-    usageChart,
+    //usageChart,
     updateCharts(result) {
       const allStats = result.features[0].attributes;
       console.log(allStats);
