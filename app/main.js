@@ -81,9 +81,9 @@ define([
             bdgLayer = layer;
             bdgLayer.popupTemplate = {
               content: `Dit gebouw is {${config.heightField}}m lang, gebouwd in
-              {${config.yearField}} en het heeft een {${config.usageField}}.`
+              {${config.yearField}} en het heeft een.`
             };
-            bdgLayer.outFields = [config.heightField, config.yearField, config.usageField];
+            //bdgLayer.outFields = [config.heightField, config.yearField, config.usageField];
 
             view.whenLayerView(layer).then(function (lyrView) {
               bdgLayerView = lyrView;
