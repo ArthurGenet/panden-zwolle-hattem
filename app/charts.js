@@ -139,12 +139,12 @@ function createAreaChart() {
 
   function createUsageChart() {
 
-    const labels = config.usageValues.map(function (element) {
+    const labels = config.usageValues1.map(function (element) {
       return element.label;
     })
     //labels.push("Other");
 
-    const backgroundColor = config.usageValues.map(function (element) {
+    const backgroundColor = config.usageValues1.map(function (element) {
       return element.color;
     });
     backgroundColor.push(config.otherColor);
