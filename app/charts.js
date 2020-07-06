@@ -190,7 +190,6 @@ function createAreaChart() {
     areaChart,
     //usageChart,
     updateCharts(result) {
-    console.log("updateChart")
       const allStats = result.features[0].attributes;
       console.log(allStats);
       const yearValues = statistics.yearStatDefinitions.map(function (element) {
