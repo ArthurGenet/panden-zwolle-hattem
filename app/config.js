@@ -6,7 +6,7 @@ define([], function () {
     heightField: "MAX_hoogte",
     areaField: "oppervlak",
     usageField1: "is_bijeenk",
-    usageField2: "is_gezondh",
+    usageField2: "is_winkel",
     yearField: "bouwjaar",
     timeline: {
       bin: 5,
