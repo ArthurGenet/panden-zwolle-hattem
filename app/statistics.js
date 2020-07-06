@@ -27,9 +27,10 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     });
   }
   const yearStatDefinitions = generateYearStatistics();
+  console.log(yearStatDefinitions);
 
   function generateAreaStatistics() {
-    return config.yearClasses.map(function (element) {
+    return config.areaClasses.map(function (element) {
       const min = element.minArea;
       const max = element.maxArea;
       console.log("area");
@@ -43,6 +44,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     });
   }
   const areaStatDefinitions = generateAreaStatistics();
+  console.log(areaStatDefinitions);
 
   function generateUsageStatistics() {
     const types = [];
