@@ -1,14 +1,10 @@
 let bdgLayer = null;
-let bdgLayerView = null;
-let view = null;
 
 function defExpression(date_expression, height_expression, usage_expression){
   def_expression = date_expression+height_expression+usage_expression;
   console.log(def_expression);
   bdgLayer.definitionExpression = def_expression;
 }
-
-
 
 
 define([
@@ -44,7 +40,7 @@ define([
 
       var info = new OAuthInfo({
           // Swap this ID out with a registered application ID
-          appId: "nCTVYx63y8WJGjxY",
+          appId: "q244Lb8gDRgWQ8hM",
           // Uncomment the next line and update if using your own portal
           // portalUrl: "https://<host>:<port>/arcgis"
           // Uncomment the next line to prevent the user's signed in state from being shared with other apps on the same domain with the same authNamespace value.
@@ -57,7 +53,7 @@ define([
       esriConfig.portalUrl = config.portalUrl;
 
       
-      
+      let bdgLayerView = null;
 
       const appState = {
         minYear: 0,
@@ -66,10 +62,6 @@ define([
         filterGeometry: null,
         features: null
       };
-      console.log(config.usageField);
-      console.log(config.yearField);
-      console.log("mais what");
-
 
       const webscene = new WebScene({
         portalItem: {
@@ -77,7 +69,7 @@ define([
         }
       });
 
-       view = new SceneView({
+      const view = new SceneView({
         container: "viewDiv",
         qualityProfile: "high",
         map: webscene
@@ -85,22 +77,14 @@ define([
 
       view.when(function () {
         webscene.allLayers.forEach(layer => {
-          console.log(layer.title);
-          console.log(config.buildingLayerTitle);
           if (layer.title === config.buildingLayerTitle) {
-            console.log("ok");
-            console.log(config.heightField);
             bdgLayer = layer;
             bdgLayer.popupTemplate = {
               content: `Dit gebouw is {${config.heightField}}m lang, gebouwd in
-              {${config.yearField}} en het heeft een {${config.usageField[0]}}.`
+              {${config.yearField}} en het heeft een {${config.usageField}}.`
             };
-            console.log("ok2");
-            //console.log(config.heightField);
-            console.log(config.yearField);
-            console.log(config.usageField);
-            //bdgLayer.outFields = [config.heightField, config.yearField, config.usageField];
-            console.log("ok3");
+            bdgLayer.outFields = [config.heightField, config.yearField, config.usageField];
+
             view.whenLayerView(layer).then(function (lyrView) {
               bdgLayerView = lyrView;
               
@@ -132,7 +116,7 @@ define([
 
       });
       webscene.add(sketchLayer);
-      console.log("coucou");
+
       const sketchViewModel = new SketchViewModel({
         layer: sketchLayer,
         defaultUpdateOptions: {
@@ -180,57 +164,11 @@ define([
       });
 
       const debouncedRunQuery = promiseUtils.debounce(function () {
-      	function oklm(){
-
-
-          const educationFields = [
-            "is_bijeenk","is_gezondh"
-
-          ];
-
-          // Creates a query object for statistics of each of the fields listed above
-          const statDefinitions = educationFields.map(function(fieldName) {
-            return {
-              onStatisticField: 'CASE WHEN '+fieldName+' = 1 THEN 1 ELSE 0 END',
-              outStatisticFieldName: fieldName + "_TOTAL",
-              statisticType: "sum"
-            };
-          });
-          console.log(statDefinitions);
-          console.log("1");
-          // query statistics for features only in view extent
-          const query = bdgLayerView.layer.createQuery();
-          console.log("2");
-          query.outStatistics = statDefinitions;
-          console.log("3");
-          query.geometry = view.extent;
-          console.log("4");
-          // query features within the view's extent on the client
-          return bdgLayerView.queryFeatures(query).then(function(response) {
-          	console.log("5");
-            const stats = response.features[0].attributes;
-			console.log("6");
-            const updatedData = [
-              stats.is_bijeenk // no school
-              
-            ];
-          console.log(updatedData);
-            // data used to update the pie chart
-             
-              // total population 12+
-          charts.statsf(updatedData);
-            
-          })};
-
-       //oklm();
-       console.log("test");
-
         const query = bdgLayerView.createQuery();
         query.geometry = appState.filterGeometry;
         query.outStatistics = statistics.totalStatDefinitions;
         return bdgLayerView.queryFeatures(query).then(charts.updateCharts);
       });
-
 
       function runQuery() {
         debouncedRunQuery().catch((error) => {
