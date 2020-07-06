@@ -88,7 +88,10 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
       }
     });
   }
-
+function stats (usage_array){
+  	usageChart.data.datasets[0].data = usage_array;
+      usageChart.update();
+  }
   function createUsageChart() {
 
     const labels = config.usageValues.map(function (element) {
@@ -134,10 +137,7 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
   const usageChart = createUsageChart();
 
 
-  function stats (usage_array){
-  	usageChart.data.datasets[0].data = usage_array;
-      usageChart.update();
-  }
+  
   return {
     yearChart,
     heightChart,
