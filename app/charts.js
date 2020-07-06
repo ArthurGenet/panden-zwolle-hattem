@@ -180,7 +180,7 @@ function createAreaChart() {
   const yearChart = createYearChart();
   const heightChart = createHeightChart();
   const areaChart = createAreaChart();
-  //sconst usageChart = createUsageChart();
+  const usageChart = createUsageChart();
 
 
   
