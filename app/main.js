@@ -222,7 +222,7 @@ define([
             
           })};
 
-       oklm();
+       //oklm();
        console.log("test");
 
         const query = bdgLayerView.createQuery();
