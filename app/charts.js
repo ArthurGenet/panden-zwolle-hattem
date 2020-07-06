@@ -204,11 +204,11 @@ function createAreaChart() {
       heightChart.data.datasets[0].data = heightValues;
       heightChart.update();
 
-      const areaValues = statistics.areaStatDefinitions.map(function (element) {
-        return allStats[element.outStatisticFieldName]
-      });
-      areaChart.data.datasets[0].data = areaValues;
-      areaChart.update();
+      //const areaValues = statistics.areaStatDefinitions.map(function (element) {
+        //return allStats[element.outStatisticFieldName]
+      //});
+      //areaChart.data.datasets[0].data = areaValues;
+      //areaChart.update();
 
       //const usageValues = statistics.usageStatDefinitions.map(function (element) {
       	//console.log(element);

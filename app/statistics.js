@@ -92,8 +92,8 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     });
   } 
 	
-  const usage1StatDefinitions = generateUsage1Statistics();
-  console.log(usage1StatDefinitions);
+  //const usage1StatDefinitions = generateUsage1Statistics();
+  //console.log(usage1StatDefinitions);
 
   function generateUsage2Statistics() {
     return config.usageValues2.map(function (element) {
@@ -107,8 +107,8 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     });
   } 
 	
-  const usage2StatDefinitions = generateUsage2Statistics();
-  console.log(usage2StatDefinitions);
+  //const usage2StatDefinitions = generateUsage2Statistics();
+  //console.log(usage2StatDefinitions);
 
   //const usageStatDefinitions = generateUsageStatistics();
 
