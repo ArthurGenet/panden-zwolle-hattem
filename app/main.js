@@ -69,7 +69,8 @@ define([
         webscene.allLayers.forEach(layer => {
           if (layer.title === config.buildingLayerTitle) {
             bdgLayer = layer;
-            
+            bdgLayer.outFields = [config.heightField, config.yearField];
+
             view.whenLayerView(layer).then(function (lyrView) {
               bdgLayerView = lyrView;
               // add time slider
