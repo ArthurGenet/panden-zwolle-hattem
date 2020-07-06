@@ -101,7 +101,7 @@ define([
     },
     applyUsageRenderer: function (layer) {
 
-      const uniqueValueInfos = config.usageValues.map(function (element) {
+      const uniqueValueInfos = config.usageValues1.map(function (element) {
         return {
           value: element.value,
           symbol: {
@@ -117,7 +117,7 @@ define([
 
       layer.renderer = {
         type: "unique-value",
-        field: config.usageField,
+        field: config.usageField1,
         defaultSymbol: {
           type: "mesh-3d",
           symbolLayers: [{
