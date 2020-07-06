@@ -116,10 +116,9 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     heightStatDefinitions,
     yearStatDefinitions,
     areaStatDefinitions,
-    usage1StatDefinitions,
-    usage2StatDefinitions,
+    
     //usageStatDefinitions,
     //totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(usageStatDefinitions)
-    totalStatDefinitions: areaStatDefinitions.concat(yearStatDefinitions).concat(heightStatDefinitions).concat(usage1StatDefinitions).concat(usage2StatDefinitions)
+    totalStatDefinitions: areaStatDefinitions.concat(yearStatDefinitions).concat(heightStatDefinitions)
   };
 });
