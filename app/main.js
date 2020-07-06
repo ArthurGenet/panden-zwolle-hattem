@@ -69,7 +69,7 @@ define([
         webscene.allLayers.forEach(layer => {
           if (layer.title === config.buildingLayerTitle) {
             bdgLayer = layer;
-            bdgLayer.outFields = [config.heightField, config.yearField, , config.usageField2, config.areaField, config.usageField1];
+            bdgLayer.outFields = [config.heightField, config.yearField,  config.usageField2,config.usageField3,config.usageField4,config.usageField5,config.usageField6,config.usageField7,config.usageField8, config.areaField, config.usageField1];
 
             view.whenLayerView(layer).then(function (lyrView) {
               bdgLayerView = lyrView;

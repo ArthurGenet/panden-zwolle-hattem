@@ -72,6 +72,92 @@ define(["app/config", "app/utils"], function (config, appUtils) {
 	
   const usage2StatDefinitions = generateUsage2Statistics();
 
+    function generateUsage3Statistics() {
+    return config.usageValues3.map(function (element) {
+      const usage = element.value;
+      return {
+        onStatisticField:
+          `CASE WHEN (${config.usageField3} = 1) THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${usage}`,
+        statisticType: "sum"
+      }
+    });
+  } 
+	
+  const usage3StatDefinitions = generateUsage3Statistics();
+
+
+
+    function generateUsage4Statistics() {
+    return config.usageValues4.map(function (element) {
+      const usage = element.value;
+      return {
+        onStatisticField:
+          `CASE WHEN (${config.usageField4} = 1) THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${usage}`,
+        statisticType: "sum"
+      }
+    });
+  } 
+	
+  const usage4StatDefinitions = generateUsage4Statistics();
+
+    function generateUsage5Statistics() {
+    return config.usageValues5.map(function (element) {
+      const usage = element.value;
+      return {
+        onStatisticField:
+          `CASE WHEN (${config.usageField5} = 1) THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${usage}`,
+        statisticType: "sum"
+      }
+    });
+  } 
+	
+  const usage5StatDefinitions = generateUsage5Statistics();
+
+    function generateUsage6Statistics() {
+    return config.usageValues6.map(function (element) {
+      const usage = element.value;
+      return {
+        onStatisticField:
+          `CASE WHEN (${config.usageField6} = 1) THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${usage}`,
+        statisticType: "sum"
+      }
+    });
+  } 
+	
+  const usage6StatDefinitions = generateUsage6Statistics();
+
+    function generateUsage7Statistics() {
+    return config.usageValues7.map(function (element) {
+      const usage = element.value;
+      return {
+        onStatisticField:
+          `CASE WHEN (${config.usageField7} = 1) THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${usage}`,
+        statisticType: "sum"
+      }
+    });
+  } 
+	
+  const usage7StatDefinitions = generateUsage7Statistics();
+
+    function generateUsage8Statistics() {
+    return config.usageValues8.map(function (element) {
+      const usage = element.value;
+      return {
+        onStatisticField:
+          `CASE WHEN (${config.usageField8} = 1) THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${usage}`,
+        statisticType: "sum"
+      }
+    });
+  } 
+	
+  const usage8StatDefinitions = generateUsage8Statistics();
+
   return {
     heightStatDefinitions,
     yearStatDefinitions,

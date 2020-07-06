@@ -6,7 +6,13 @@ define([], function () {
     heightField: "MAX_hoogte",
     areaField: "oppervlak",
     usageField1: "is_bijeenk",
-    usageField2: "is_winkel",
+    usageField2: "is_gezondh",
+    usageField3: "is_industr",
+    usageField4: "is_kantoor",
+    usageField5: "is_logies",
+    usageField6: "is_onderwi",
+    usageField7: "is_winkel",
+    usageField8: "is_kas",
     yearField: "bouwjaar",
     timeline: {
       bin: 5,
@@ -93,6 +99,36 @@ define([], function () {
       value: "gezondheidszorgfunctie",
       color: "#E69800",
       label: "Gezondheidszorgfunctie"
+    }],
+    usageValues3:[{
+      value: "industriefunctie",
+      color: "#E69800",
+      label: "Industriefunctie"
+    }],
+    usageValues4:[{
+      value: "kantoorfunctie",
+      color: "#E69800",
+      label: "Kantoorfunctie"
+    }],
+    usageValues5:[{
+      value: "logiesfunctie",
+      color: "#E69800",
+      label: "Logiesfunctie"
+    }],
+    usageValues6:[{
+      value: "onderwijsfunctie",
+      color: "#E69800",
+      label: "Onderwijsfunctie"
+    }],
+    usageValues7:[{
+      value: "winkelfunctie",
+      color: "#E69800",
+      label: "Winkelfunctie"
+    }],
+    usageValues8:[{
+      value: "kas",
+      color: "#E69800",
+      label: "Kas"
     }],
 
   }
