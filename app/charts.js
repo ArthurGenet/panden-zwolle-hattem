@@ -183,7 +183,7 @@ function statsf (usage_array){
   const yearChart = createYearChart();
   const heightChart = createHeightChart();
   const areaChart = createAreaChart();
-  const usageChart = createUsageChart();
+  //sconst usageChart = createUsageChart();
 
 
   

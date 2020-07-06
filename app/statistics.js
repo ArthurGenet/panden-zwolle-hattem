@@ -32,6 +32,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     return config.yearClasses.map(function (element) {
       const min = element.minArea;
       const max = element.maxArea;
+      console.log("area");
 
       return {
         onStatisticField:
