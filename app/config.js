@@ -5,7 +5,7 @@ define([], function () {
     buildingLayerTitle: "Panden",
     heightField: "MAX_hoogte",
     areaField: "oppervlak",
-    usageField: "is_bijeenk",
+    usageField1: "is_bijeenk",
     usageField2: "is_gezondh",
     yearField: "bouwjaar",
     timeline: {

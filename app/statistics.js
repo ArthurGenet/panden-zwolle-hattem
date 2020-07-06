@@ -33,7 +33,6 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     return config.areaClasses.map(function (element) {
       const min = element.minArea;
       const max = element.maxArea;
-      console.log("area");
 
       return {
         onStatisticField:
@@ -78,14 +77,32 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     return usageStats;
   }
 
+
+  function generateUsage1Statistics() {
+    return config.usageValues1.map(function (element) {
+      const usage = element.value;
+
+      return {
+        onStatisticField:
+          `CASE WHEN (${config.usageField1} = 1) THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${usage}`,
+        statisticType: "sum"
+      }
+    });
+  } 
+	
+  const usage1StatDefinitions = generateUsage1Statistics();
+  console.log(usage1StatDefinitions);
+
   //const usageStatDefinitions = generateUsageStatistics();
 
   return {
     heightStatDefinitions,
     yearStatDefinitions,
     areaStatDefinitions,
+    usage1StatDefinitions,
     //usageStatDefinitions,
     //totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(usageStatDefinitions)
-    totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(areaStatDefinitions)
+    totalStatDefinitions: areaStatDefinitions.concat(yearStatDefinitions).concat(heightStatDefinitions).concat(usage1StatDefinitions)
   };
 });
