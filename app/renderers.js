@@ -41,6 +41,26 @@ define([
       }
     },
 
+    applyHeightRenderer: function (layer) {
+      layer.renderer = {
+        type: "simple",
+        symbol: {
+          type: "mesh-3d",
+          symbolLayers: [{
+            type: "fill",
+            material: { color: config.noDataColor, colorMixMode: "replace" },
+          }]
+        },
+        visualVariables: {
+          type: "color",
+          field: config.heightField,
+          legendOptions: {
+            title: "Height of the buildings"
+          },
+          stops: config.heightVariable.stops
+        }
+      }
+    },
     applyAreaRenderer: function (layer) {
 
       classBreakInfos = config.areaClasses.map(function (element) {
@@ -77,57 +97,6 @@ define([
       }
     },
 
-
-
-    applyHeightRenderer: function (layer) {
-      layer.renderer = {
-        type: "simple",
-        symbol: {
-          type: "mesh-3d",
-          symbolLayers: [{
-            type: "fill",
-            material: { color: config.noDataColor, colorMixMode: "replace" },
-          }]
-        },
-        visualVariables: {
-          type: "color",
-          field: config.heightField,
-          legendOptions: {
-            title: "Height of the buildings"
-          },
-          stops: config.heightVariable.stops
-        }
-      }
-    },
-    applyUsageRenderer: function (layer) {
-
-      const uniqueValueInfos = config.usageValues1.map(function (element) {
-        return {
-          value: element.value,
-          symbol: {
-            type: "mesh-3d",
-            symbolLayers: [{
-              type: "fill",
-              material: { color: element.color, colorMixMode: "replace" }
-            }]
-          },
-          label: element.label
-        }
-      });
-
-      layer.renderer = {
-        type: "unique-value",
-        field: config.usageField1,
-        defaultSymbol: {
-          type: "mesh-3d",
-          symbolLayers: [{
-            type: "fill",
-            material: { color: config.otherColor, colorMixMode: "replace" },
-          }]
-        },
-        uniqueValueInfos: uniqueValueInfos
-      }
-    },
     applyOriginalTexture: function (layer) {
       layer.renderer = {
         type: "simple",

@@ -2,10 +2,11 @@
 <!-- http://jsapi.maps.arcgis.com/home/webscene/viewer.html?webscene=d9d0b213cd814daa82a8e7142c9dda6e -->
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-  <title>Zwolle Hattem gebouwen</title>
+  <title>San Francisco buildings</title>
   <link rel="stylesheet" href="https://js.arcgis.com/next/esri/css/main.css" />
   <link rel="stylesheet" href="./style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
@@ -29,10 +30,9 @@
 </head>
 
 <body>
-  <div style='clear:both'></div>
   <div id="viewDiv">
     <div id="statsContainer">
-      <div class="title">Zwolle Hattem gebouwen</div>
+      <div class="title">San Francisco buildings</div>
       <div class="charts">
         <div>
           <canvas id="yearChart" width="350" height="170"></canvas>
@@ -44,11 +44,7 @@
         </div>
         <div>
           <canvas id="areaChart" width="350" height="170"></canvas>
-          <button id="applyAreaRenderer">Color by area</button>
-        </div>
-        <div>
-          <canvas id="usageChart" width="350" height="170"></canvas>
-          <button id="applyUsageRenderer">Color by usage</button>
+          <button id="applyUsageRenderer">Color by area</button>
         </div>
       </div>
       <div class="buttons">

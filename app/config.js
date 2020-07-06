@@ -95,35 +95,5 @@ define([], function () {
       label: "Gezondheidszorgfunctie"
     }],
 
-
-    usage: [{
-      value: "gezondheidszorgfunctie",
-      color: "#E69800",
-      label: "Gezondheidszorgfunctie"
-    }, {
-      value: "industriefunctie",
-      color: "#B53535",
-      label: "Industriefunctie"
-    }, {
-      value: "kantoorfunctie",
-      color: "#8400A8",
-      label: "Kantoorfunctie"
-    }, {
-      value: "logiesfunctie",
-      color: "#376CBD",
-      label: "Logiesfunctie"
-    }, {
-      value: "onderwijsfunctie",
-      color: "#E600A9",
-      label: "Onderwijsfunctie"
-    },  {
-      value: "winkelfunctie",
-      color: "#FFFF00",
-      label: "Winkelfunctie"
-    }, {
-      value: "kas",
-      color: "#E1E1E1",
-      label: "Kas"
-    }]
   }
 });

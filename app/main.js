@@ -1,12 +1,3 @@
-let bdgLayer = null;
-
-function defExpression(date_expression, height_expression, usage_expression){
-  def_expression = date_expression+height_expression+usage_expression;
-  console.log(def_expression);
-  bdgLayer.definitionExpression = def_expression;
-}
-
-
 define([
   "app/config",
   "esri/identity/OAuthInfo",
@@ -49,10 +40,9 @@ define([
         });
         esriId.registerOAuthInfos([info]);
 
-
       esriConfig.portalUrl = config.portalUrl;
 
-      
+      let bdgLayer = null;
       let bdgLayerView = null;
 
       const appState = {
@@ -79,15 +69,9 @@ define([
         webscene.allLayers.forEach(layer => {
           if (layer.title === config.buildingLayerTitle) {
             bdgLayer = layer;
-            bdgLayer.popupTemplate = {
-              content: `Dit gebouw is {${config.heightField}}m lang, gebouwd in
-              {${config.yearField}} en het heeft een.`
-            };
-            //bdgLayer.outFields = [config.heightField, config.yearField, config.usageField];
-
+            
             view.whenLayerView(layer).then(function (lyrView) {
               bdgLayerView = lyrView;
-              
               // add time slider
               const timeSlider = time.createTimeSlider(view, config);
               timeSlider.watch("timeExtent", function (timeExtent) {
@@ -113,7 +97,6 @@ define([
         elevationInfo: {
           mode: "on-the-ground"
         }
-
       });
       webscene.add(sketchLayer);
 
@@ -123,22 +106,7 @@ define([
           tool: "reshape",
           toggleToolOnClick: false
         },
-        view: view,
-          polygonSymbol: {
-            type: "polygon-3d",
-            symbolLayers: [
-              {
-                type: "fill",
-                material: {
-                  color: [100, 200, 210, 0.6]
-                },
-                outline: {
-                  color: [0, 0, 0, 1],
-                  size: "5px"
-                }
-              }
-            ]
-          }
+        view: view
       });
 
       sketchViewModel.on("create", function (event) {
@@ -167,7 +135,6 @@ define([
         const query = bdgLayerView.createQuery();
         query.geometry = appState.filterGeometry;
         query.outStatistics = statistics.totalStatDefinitions;
-        console.log("no problemo");
         return bdgLayerView.queryFeatures(query).then(charts.updateCharts);
       });
 
@@ -204,10 +171,6 @@ define([
         renderers.applyAreaRenderer(bdgLayer);
       });
 
-      //document.getElementById("applyUsageRenderer").addEventListener("click", function () {
-        //renderers.applyUsageRenderer(bdgLayer);
-      //});
-
       document.getElementById("clearRenderer").addEventListener("click", function () {
         renderers.applyOriginalTexture(bdgLayer);
       });
@@ -217,5 +180,4 @@ define([
       }
     }
   }
-
 });
