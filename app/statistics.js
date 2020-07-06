@@ -42,8 +42,8 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       }
     });
   }
-  const areaStatDefinitions = generateAreaStatistics();
-  console.log(areaStatDefinitions);
+  //const areaStatDefinitions = generateAreaStatistics();
+  //console.log(areaStatDefinitions);
 
   function generateUsageStatistics() {
     const types = [];
@@ -115,10 +115,10 @@ define(["app/config", "app/utils"], function (config, appUtils) {
   return {
     heightStatDefinitions,
     yearStatDefinitions,
-    areaStatDefinitions,
+    //areaStatDefinitions,
 
     //usageStatDefinitions,
     //totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(usageStatDefinitions)
-    totalStatDefinitions: areaStatDefinitions.concat(yearStatDefinitions).concat(heightStatDefinitions)
+    totalStatDefinitions: yearStatDefinitions.concat(heightStatDefinitions)
   };
 });
