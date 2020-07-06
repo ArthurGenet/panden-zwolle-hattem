@@ -107,7 +107,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     });
   } 
 	
-  const usage2StatDefinitions = generateUsage2Statistics();
+  const usage2StatDefinitions = generateUsage1Statistics();
   console.log(usage2StatDefinitions);
 
   //const usageStatDefinitions = generateUsageStatistics();
