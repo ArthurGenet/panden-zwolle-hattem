@@ -188,7 +188,7 @@ function createAreaChart() {
     yearChart,
     heightChart,
     areaChart,
-    //usageChart,
+    usageChart,
     updateCharts(result) {
     console.log("updateChart")
       const allStats = result.features[0].attributes;
