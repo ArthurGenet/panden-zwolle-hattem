@@ -195,16 +195,18 @@ define([
               statisticType: "sum"
             };
           });
-
+          console.log("1");
           // query statistics for features only in view extent
           const query = bdgLayerView.layer.createQuery();
+          console.log("2");
           query.outStatistics = statDefinitions;
+          console.log("3");
           query.geometry = view.extent;
-
+          console.log("4");
           // query features within the view's extent on the client
           return bdgLayerView.queryFeatures(query).then(function(response) {
             const stats = response.features[0].attributes;
-
+			console.log("5");
             const updatedData = [
               stats.is_bijeenk // no school
               
@@ -213,7 +215,7 @@ define([
             // data used to update the pie chart
              
               // total population 12+
-          charts.stats(updatedData);
+          charts.statsf(updatedData);
             
           })};
 

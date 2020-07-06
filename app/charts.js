@@ -88,7 +88,7 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
       }
     });
   }
-function stats (usage_array){
+function statsf (usage_array){
   	usageChart.data.datasets[0].data = usage_array;
       usageChart.update();
   }
