@@ -64,7 +64,6 @@ define([], function () {
     }],
 
 
-
     usage: [{
       value: "gezondheidszorgfunctie",
       color: "#E69800",

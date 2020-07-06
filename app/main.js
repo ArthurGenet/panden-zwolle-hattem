@@ -211,13 +211,14 @@ define([
             ];
           console.log(updatedData);
             // data used to update the pie chart
-            return 
+             
               // total population 12+
-          updatedData
+          charts.stats(updatedData);
             
           })};
-          
+
        oklm();
+       console.log("test");
 
         const query = bdgLayerView.createQuery();
         query.geometry = appState.filterGeometry;

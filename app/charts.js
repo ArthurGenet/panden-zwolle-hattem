@@ -132,6 +132,12 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
   const yearChart = createYearChart();
   const heightChart = createHeightChart();
   const usageChart = createUsageChart();
+
+
+  function stats (usage_array){
+  	usageChart.data.datasets[0].data = usage_array;
+      usageChart.update();
+  }
   return {
     yearChart,
     heightChart,
@@ -151,17 +157,17 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
       heightChart.data.datasets[0].data = heightValues;
       heightChart.update();
 
-      const usageValues = statistics.usageStatDefinitions.map(function (element) {
-      	console.log(element);
-      	console.log(allStats[element.outStatisticFieldName])
-        return allStats[element.outStatisticFieldName]
-      });
+      //const usageValues = statistics.usageStatDefinitions.map(function (element) {
+      	//console.log(element);
+      	//console.log(allStats[element.outStatisticFieldName])
+        //return allStats[element.outStatisticFieldName]
+      //});
 
 
 
-      console.log(usageValues);
-      usageChart.data.datasets[0].data = usageValues;
-      usageChart.update();
+      //console.log(usageValues);
+      //usageChart.data.datasets[0].data = usageValues;
+      //usageChart.update();
     }
   }
 });
