@@ -170,8 +170,32 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
       const usageValues2 = statistics.usage2StatDefinitions.map(function (element) {
         return allStats[element.outStatisticFieldName]
       });
+      const usageValues3 = statistics.usage3StatDefinitions.map(function (element) {
+        return allStats[element.outStatisticFieldName]
+      });
+      const usageValues4 = statistics.usage4StatDefinitions.map(function (element) {
+        return allStats[element.outStatisticFieldName]
+      });
+      const usageValues5 = statistics.usage5StatDefinitions.map(function (element) {
+        return allStats[element.outStatisticFieldName]
+      });
+      const usageValues6 = statistics.usage6StatDefinitions.map(function (element) {
+        return allStats[element.outStatisticFieldName]
+      });
+      const usageValues7 = statistics.usage7StatDefinitions.map(function (element) {
+        return allStats[element.outStatisticFieldName]
+      });
+      const usageValues8 = statistics.usage8StatDefinitions.map(function (element) {
+        return allStats[element.outStatisticFieldName]
+      });
       console.log(usageValues1);
       console.log(usageValues2);
+      console.log(usageValues3);
+      console.log(usageValues4);
+      console.log(usageValues5);
+      console.log(usageValues6);
+      console.log(usageValues7);
+      console.log(usageValues8);
     }
   }
 });

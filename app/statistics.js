@@ -164,6 +164,12 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     areaStatDefinitions,
     usage1StatDefinitions,
     usage2StatDefinitions,
-    totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(areaStatDefinitions).concat(usage1StatDefinitions).concat(usage2StatDefinitions)
+    usage3StatDefinitions,
+    usage4StatDefinitions,
+    usage5StatDefinitions,
+    usage6StatDefinitions,
+    usage7StatDefinitions,
+    usage8StatDefinitions,
+    totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(areaStatDefinitions).concat(usage1StatDefinitions).concat(usage2StatDefinitions).concat(usage3StatDefinitions).concat(usage4StatDefinitions).concat(usage5StatDefinitions).concat(usage6StatDefinitions).concat(usage7StatDefinitions).concat(usage8StatDefinitions)
   };
 });
