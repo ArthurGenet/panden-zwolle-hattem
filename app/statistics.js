@@ -42,8 +42,8 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       }
     });
   }
-  //const areaStatDefinitions = generateAreaStatistics();
-  //console.log(areaStatDefinitions);
+  const areaStatDefinitions = generateAreaStatistics();
+  console.log(areaStatDefinitions);
 
   function generateUsageStatistics() {
     const types = [];
@@ -92,8 +92,8 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     });
   } 
 	
-  //const usage1StatDefinitions = generateUsage1Statistics();
-  //console.log(usage1StatDefinitions);
+  const usage1StatDefinitions = generateUsage1Statistics();
+  console.log(usage1StatDefinitions);
 
   function generateUsage2Statistics() {
     return config.usageValues2.map(function (element) {
@@ -107,18 +107,19 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     });
   } 
 	
-  //const usage2StatDefinitions = generateUsage2Statistics();
-  //console.log(usage2StatDefinitions);
+  const usage2StatDefinitions = generateUsage2Statistics();
+  console.log(usage2StatDefinitions);
 
   //const usageStatDefinitions = generateUsageStatistics();
 
   return {
     heightStatDefinitions,
     yearStatDefinitions,
-    //areaStatDefinitions,
-
+    areaStatDefinitions,
+    usage1StatDefinitions,
+    usage2StatDefinitions,
     //usageStatDefinitions,
     //totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(usageStatDefinitions)
-    totalStatDefinitions: yearStatDefinitions.concat(heightStatDefinitions)
+    totalStatDefinitions: areaStatDefinitions.concat(yearStatDefinitions).concat(heightStatDefinitions).concat(usage1StatDefinitions).concat(usage2StatDefinitions)
   };
 });

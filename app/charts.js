@@ -180,16 +180,17 @@ function createAreaChart() {
   const yearChart = createYearChart();
   const heightChart = createHeightChart();
   const areaChart = createAreaChart();
-  //const usageChart = createUsageChart();
+  const usageChart = createUsageChart();
 
 
   
   return {
     yearChart,
     heightChart,
-    //areaChart,
+    areaChart,
+    usageChart,
     updateCharts(result) {
-    console.log("updateChart");
+    console.log("updateChart")
       const allStats = result.features[0].attributes;
       console.log(allStats);
       const yearValues = statistics.yearStatDefinitions.map(function (element) {
@@ -204,11 +205,11 @@ function createAreaChart() {
       heightChart.data.datasets[0].data = heightValues;
       heightChart.update();
 
-      //const areaValues = statistics.areaStatDefinitions.map(function (element) {
-        //return allStats[element.outStatisticFieldName]
-      //});
-      //areaChart.data.datasets[0].data = areaValues;
-      //areaChart.update();
+      const areaValues = statistics.areaStatDefinitions.map(function (element) {
+        return allStats[element.outStatisticFieldName]
+      });
+      areaChart.data.datasets[0].data = areaValues;
+      areaChart.update();
 
       //const usageValues = statistics.usageStatDefinitions.map(function (element) {
       	//console.log(element);
@@ -216,7 +217,16 @@ function createAreaChart() {
         //return allStats[element.outStatisticFieldName]
       //});
 
-
+      const usage1Values = statistics.usage1StatDefinitions.map(function (element) {
+        return allStats[element.outStatisticFieldName]
+      });
+      const usage2Values = statistics.usage2StatDefinitions.map(function (element) {
+        return allStats[element.outStatisticFieldName]
+      });
+      const usageValues = usage1Values.concat(usage2Values);
+      console.log(usageValues);
+      usageChart.data.datasets[0].data = usageValues;
+      usageChart.update();
 
       //console.log(usageValues);
       //usageChart.data.datasets[0].data = usageValues;
