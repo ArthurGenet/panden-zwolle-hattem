@@ -136,14 +136,11 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
 
 function createUsageChart() {
 
-    const labels = ["Bijeenkomstfunctie","Gezondheidszorgfunctie","Industriefunctie","Kantoorfunctie","Logiesfunctie","Onderwijsfunctie","Winkelfunctie","Kas"].map(function (element) {
-      return element.label;
-    })
+    const labels = ["Bijeenkomstfunctie","Gezondheidszorgfunctie","Industriefunctie","Kantoorfunctie","Logiesfunctie","Onderwijsfunctie","Winkelfunctie","Kas"];
     //labels.push("Other");
 
-    const backgroundColor = config.usageValues1.map(function (element) {
-      return element.color;
-    });
+    const backgroundColor = ["#00FFC5","#E69800","#E69800","#E69800","#E69800","#E69800","#E69800","#E69800"]    
+
     backgroundColor.push(config.otherColor);
 
     const usageCanvas = document.getElementById("usageChart");
