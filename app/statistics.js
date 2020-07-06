@@ -41,14 +41,14 @@ define(["app/config", "app/utils"], function (config, appUtils) {
       }
     });
   }
-  const areaStatDefinitions = generateAreaStatistics();
+  //const areaStatDefinitions = generateAreaStatistics();
 
 
 
   return {
     heightStatDefinitions,
     yearStatDefinitions,
-    areaStatDefinitions,
-    totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(areaStatDefinitions)
+    //areaStatDefinitions,
+    totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions)//.concat(areaStatDefinitions)
   };
 });

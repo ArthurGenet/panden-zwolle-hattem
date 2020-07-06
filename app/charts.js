@@ -137,11 +137,11 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
 
   const yearChart = createYearChart();
   const heightChart = createHeightChart();
-  const areaChart = createAreaChart();
+  //const areaChart = createAreaChart();
   return {
     yearChart,
     heightChart,
-    areaChart,
+    //areaChart,
     updateCharts(result) {
       const allStats = result.features[0].attributes;
 
@@ -157,11 +157,7 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
       heightChart.data.datasets[0].data = heightValues;
       heightChart.update();
 
-      const areaValues = statistics.areaStatDefinitions.map(function (element) {
-        return allStats[element.outStatisticFieldName]
-      });
-      areaChart.data.datasets[0].data = areaValues;
-      areaChart.update();
+      
     }
   }
 });
