@@ -139,7 +139,7 @@ function createUsageChart() {
     const labels = ["Bijeenkomstfunctie","Gezondheidszorgfunctie","Industriefunctie","Kantoorfunctie","Logiesfunctie","Onderwijsfunctie","Winkelfunctie","Kas"];
     //labels.push("Other");
 
-    const backgroundColor = ["#00FFC5","#E69800","#E69800","#E69800","#E69800","#E69800","#E69800","#E69800"] ;   
+    const backgroundColor = ["#00FFC5","#E69800","#B53535","#8400A8","#376CBD","#E600A9","#FFFF00","#734C00"] ;   
 
     //backgroundColor.push(config.otherColor);
 
