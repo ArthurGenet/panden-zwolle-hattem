@@ -80,6 +80,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
 
   function generateUsage1Statistics() {
     return config.usageValues1.map(function (element) {
+    	console.log("usage1");
       const usage = element.value;
 
       return {

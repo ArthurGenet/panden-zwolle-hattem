@@ -84,7 +84,7 @@ define([], function () {
       color: "#ffffb2",
       label: ">500"
     }],
-    usageValues: [{
+    usageValues1: [{
       value: "bijeenkomstfunctie",
       color: "#00FFC5",
       label: "Bijeenkomstfunctie"

@@ -217,7 +217,7 @@ function createAreaChart() {
         //return allStats[element.outStatisticFieldName]
       //});
 
-      const usage1Values = statistics.areaStatDefinitions.map(function (element) {
+      const usage1Values = statistics.usage1StatDefinitions.map(function (element) {
         return allStats[element.outStatisticFieldName]
       });
       console.log(usage1Values);
