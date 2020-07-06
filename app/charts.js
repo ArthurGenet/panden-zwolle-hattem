@@ -134,14 +134,60 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
     return areaChart;
   }
 
+function createUsageChart() {
+
+    const labels = ["Bijeenkomstfunctie","Gezondheidszorgfunctie","Industriefunctie","Kantoorfunctie","Logiesfunctie","Onderwijsfunctie","Winkelfunctie","Kas"].map(function (element) {
+      return element.label;
+    })
+    //labels.push("Other");
+
+    const backgroundColor = config.usageValues1.map(function (element) {
+      return element.color;
+    });
+    backgroundColor.push(config.otherColor);
+
+    const usageCanvas = document.getElementById("usageChart");
+    const usageChart = new Chart(usageCanvas.getContext("2d"), {
+      type: "doughnut",
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            backgroundColor: backgroundColor,
+            borderWidth: 0,
+            data: [0, 0, 0, 0, 0]
+          }
+        ]
+      },
+      options: {
+        responsive: false,
+        cutoutPercentage: 35,
+        legend: {
+          position: "bottom"
+        },
+        title: {
+          display: true,
+          text: "Building usage"
+        }
+      }
+    });
+    return usageChart;
+  }
+
+
+
 
   const yearChart = createYearChart();
   const heightChart = createHeightChart();
   const areaChart = createAreaChart();
+  const usageChart = createUsageChart();
+
+
   return {
     yearChart,
     heightChart,
     areaChart,
+    usageChart,
     updateCharts(result) {
       const allStats = result.features[0].attributes;
 
@@ -196,6 +242,9 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
       console.log(usageValues6);
       console.log(usageValues7);
       console.log(usageValues8);
+      usageChart.data.datasets[0].data = [usageValues1,usageValues2,usageValues3,usageValues4,usageValues5,usageValues6,usageValues7,usageValues8];
+      usageChart.update();
+
     }
   }
 });
