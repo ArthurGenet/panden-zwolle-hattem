@@ -116,7 +116,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     heightStatDefinitions,
     yearStatDefinitions,
     areaStatDefinitions,
-    
+
     //usageStatDefinitions,
     //totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(usageStatDefinitions)
     totalStatDefinitions: areaStatDefinitions.concat(yearStatDefinitions).concat(heightStatDefinitions)

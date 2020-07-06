@@ -180,7 +180,7 @@ function createAreaChart() {
   const yearChart = createYearChart();
   const heightChart = createHeightChart();
   const areaChart = createAreaChart();
-  const usageChart = createUsageChart();
+  //const usageChart = createUsageChart();
 
 
   
@@ -215,6 +215,7 @@ function createAreaChart() {
       	//console.log(allStats[element.outStatisticFieldName])
         //return allStats[element.outStatisticFieldName]
       //});
+
 
 
       //console.log(usageValues);
