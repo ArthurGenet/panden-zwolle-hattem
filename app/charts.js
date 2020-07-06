@@ -162,6 +162,16 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
       });
       areaChart.data.datasets[0].data = areaValues;
       areaChart.update();
+
+      const usageValues1 = statistics.usageStatDefinitions.map(function (element) {
+        return allStats[element.outStatisticFieldName]
+      });
+
+      const usageValues2 = statistics.usageStatDefinitions.map(function (element) {
+        return allStats[element.outStatisticFieldName]
+      });
+      console.log(usageValues1);
+      console.log(usageValues2);
     }
   }
 });

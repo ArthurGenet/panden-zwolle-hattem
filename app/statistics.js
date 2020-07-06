@@ -43,12 +43,41 @@ define(["app/config", "app/utils"], function (config, appUtils) {
   }
   const areaStatDefinitions = generateAreaStatistics();
 
+  function generateUsage1Statistics() {
+    return config.usageValues1.map(function (element) {
+      const usage = element.value;
 
+      return {
+        onStatisticField:
+          `CASE WHEN (${config.usageField1} = 1) THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${usage}`,
+        statisticType: "sum"
+      }
+    });
+  } 
+	
+  const usage1StatDefinitions = generateUsage1Statistics();
+
+  function generateUsage2Statistics() {
+    return config.usageValues2.map(function (element) {
+      const usage = element.value;
+      return {
+        onStatisticField:
+          `CASE WHEN (${config.usageField2} = 1) THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${usage}`,
+        statisticType: "sum"
+      }
+    });
+  } 
+	
+  const usage2StatDefinitions = generateUsage2Statistics();
 
   return {
     heightStatDefinitions,
     yearStatDefinitions,
     areaStatDefinitions,
-    totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(areaStatDefinitions)
+    usage1StatDefinitions,
+    usage2StatDefinitions,
+    totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(areaStatDefinitions).concat(usage1StatDefinitions).concat(usage2StatDefinitions)
   };
 });
