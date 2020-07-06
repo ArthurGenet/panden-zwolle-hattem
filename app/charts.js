@@ -163,11 +163,11 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
       areaChart.data.datasets[0].data = areaValues;
       areaChart.update();
 
-      const usageValues1 = statistics.usageStatDefinitions.map(function (element) {
+      const usageValues1 = statistics.usageStatDefinitions1.map(function (element) {
         return allStats[element.outStatisticFieldName]
       });
 
-      const usageValues2 = statistics.usageStatDefinitions.map(function (element) {
+      const usageValues2 = statistics.usageStatDefinitions2.map(function (element) {
         return allStats[element.outStatisticFieldName]
       });
       console.log(usageValues1);
