@@ -184,7 +184,8 @@ define([
 
 
           const educationFields = [
-            "is_bijeenk"
+            "is_bijeenk","is_gezondh"
+
           ];
 
           // Creates a query object for statistics of each of the fields listed above
@@ -205,8 +206,9 @@ define([
           console.log("4");
           // query features within the view's extent on the client
           return bdgLayerView.queryFeatures(query).then(function(response) {
+          	console.log("5");
             const stats = response.features[0].attributes;
-			console.log("5");
+			console.log("6");
             const updatedData = [
               stats.is_bijeenk // no school
               
