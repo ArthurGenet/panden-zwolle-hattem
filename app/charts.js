@@ -136,10 +136,7 @@ function createAreaChart() {
       }
     });
   }
-function statsf (usage_array){
-  	usageChart.data.datasets[0].data = usage_array;
-      usageChart.update();
-  }
+
   function createUsageChart() {
 
     const labels = config.usageValues.map(function (element) {
@@ -193,6 +190,7 @@ function statsf (usage_array){
     areaChart,
     //usageChart,
     updateCharts(result) {
+    console.log("updateChart")
       const allStats = result.features[0].attributes;
       console.log(allStats);
       const yearValues = statistics.yearStatDefinitions.map(function (element) {

@@ -167,6 +167,7 @@ define([
         const query = bdgLayerView.createQuery();
         query.geometry = appState.filterGeometry;
         query.outStatistics = statistics.totalStatDefinitions;
+        console.log("no problemo");
         return bdgLayerView.queryFeatures(query).then(charts.updateCharts);
       });
 
