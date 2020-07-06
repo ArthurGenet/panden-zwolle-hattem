@@ -196,6 +196,7 @@ define([
               statisticType: "sum"
             };
           });
+          console.log(statDefinitions);
           console.log("1");
           // query statistics for features only in view extent
           const query = bdgLayerView.layer.createQuery();
