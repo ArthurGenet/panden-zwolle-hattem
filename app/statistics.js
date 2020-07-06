@@ -95,6 +95,21 @@ define(["app/config", "app/utils"], function (config, appUtils) {
   const usage1StatDefinitions = generateUsage1Statistics();
   console.log(usage1StatDefinitions);
 
+  function generateUsage2Statistics() {
+    return config.usageValues2.map(function (element) {
+      const usage = element.value;
+      return {
+        onStatisticField:
+          `CASE WHEN (${config.usageField2} = 1) THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `usage_${usage}`,
+        statisticType: "sum"
+      }
+    });
+  } 
+	
+  const usage1StatDefinitions = generateUsage1Statistics();
+  console.log(usage1StatDefinitions);
+
   //const usageStatDefinitions = generateUsageStatistics();
 
   return {

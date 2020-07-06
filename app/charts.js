@@ -220,8 +220,12 @@ function createAreaChart() {
       const usage1Values = statistics.usage1StatDefinitions.map(function (element) {
         return allStats[element.outStatisticFieldName]
       });
-      console.log(usage1Values);
-      usageChart.data.datasets[0].data = usage1Values;
+      const usage2Values = statistics.usage2StatDefinitions.map(function (element) {
+        return allStats[element.outStatisticFieldName]
+      });
+      const usageValues = usage1Values.concat(usage2Values);
+      console.log(usageValues);
+      usageChart.data.datasets[0].data = usageValues;
       usageChart.update();
 
       //console.log(usageValues);
