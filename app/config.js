@@ -4,6 +4,7 @@ define([], function () {
     itemId: "cb15de11a6a9451a9216af35b9ccba75",
     buildingLayerTitle: "Panden",
     heightField: "MAX_hoogte",
+    areaField: "oppervlak",
     usageField: "is_bijeenk",
     usageField2: "is_gezondh",
     yearField: "bouwjaar",
@@ -52,6 +53,37 @@ define([], function () {
       ],
       binSize: 5
     },
+    areaClasses: [{
+      minArea: 0,
+      maxArea: 250,
+      color: "#bd0026",
+      label: "<1900"
+    }, {
+      minArea: 250,
+      maxArea: 500,
+      color: "#f03b20",
+      label: "1900 - 1924"
+    }, {
+      minArea: 500,
+      maxArea: 1000,
+      color: "#fd8d3c",
+      label: "1925 - 1949"
+    }, {
+      minArea: 1000,
+      maxArea: 1500,
+      color: "#feb24c",
+      label: "1951 - 1974"
+    }, {
+      minArea: 1500,
+      maxArea: 2000,
+      color: "#fed976",
+      label: "1975 - 1999"
+    }, {
+      minArea: 2000,
+      maxArea: 100000,
+      color: "#ffffb2",
+      label: "2000 - 2020"
+    }],
     usageValues: [{
       value: "bijeenkomstfunctie",
       color: "#00FFC5",

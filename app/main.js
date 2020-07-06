@@ -199,6 +199,10 @@ define([
         renderers.applyHeightRenderer(bdgLayer);
       });
 
+      document.getElementById("applyAreaRenderer").addEventListener("click", function () {
+        renderers.applyAreaRenderer(bdgLayer);
+      });
+
       document.getElementById("applyUsageRenderer").addEventListener("click", function () {
         renderers.applyUsageRenderer(bdgLayer);
       });

@@ -28,6 +28,21 @@ define(["app/config", "app/utils"], function (config, appUtils) {
   }
   const yearStatDefinitions = generateYearStatistics();
 
+  function generateAreaStatistics() {
+    return config.yearClasses.map(function (element) {
+      const min = element.minArea;
+      const max = element.maxArea;
+
+      return {
+        onStatisticField:
+          `CASE WHEN (${config.areaField} >= ${min} AND ${config.areaField} < ${max}) THEN 1 ELSE 0 END`,
+        outStatisticFieldName: `area_${min}_${max}`,
+        statisticType: "sum"
+      }
+    });
+  }
+  const areaStatDefinitions = generateAreaStatistics();
+
   function generateUsageStatistics() {
     const types = [];
     const usageStats = config.usageValues.map(function (element) {
@@ -65,8 +80,9 @@ define(["app/config", "app/utils"], function (config, appUtils) {
   return {
     heightStatDefinitions,
     yearStatDefinitions,
+    areaStatDefinitions,
     //usageStatDefinitions,
     //totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(usageStatDefinitions)
-    totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions)
+    totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(areaStatDefinitions)
   };
 });

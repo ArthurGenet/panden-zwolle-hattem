@@ -41,6 +41,44 @@ define([
       }
     },
 
+    applyAreaRenderer: function (layer) {
+
+      classBreakInfos = config.areaClasses.map(function (element) {
+        return {
+          minValue: element.minArea,
+          maxValue: element.maxArea,
+          symbol: {
+            type: "mesh-3d",
+            symbolLayers: [{
+              type: "fill",
+              material: {
+                color: element.color,
+                colorMixMode: "replace"
+              },
+            }]
+          }
+        }
+      })
+
+      layer.renderer = {
+        type: "class-breaks",
+        field: config.areaField,
+        defaultSymbol: {
+          type: "mesh-3d",
+          symbolLayers: [{
+            type: "fill",
+            material: {
+              color: config.noDataColor,
+              colorMixMode: "replace"
+            },
+          }]
+        },
+        classBreakInfos: classBreakInfos
+      }
+    },
+
+
+
     applyHeightRenderer: function (layer) {
       layer.renderer = {
         type: "simple",

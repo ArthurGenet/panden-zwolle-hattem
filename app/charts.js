@@ -45,6 +45,54 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
     });
     return yearChart;
   }
+
+
+function createAreaChart() {
+    const areaCanvas = document.getElementById("areaChart");
+    const areaChart = new Chart(areaCanvas.getContext("2d"), {
+      type: "bar",
+      data: {
+        labels: config.areaClasses.map(function (element) { return element.label }),
+        datasets: [
+          {
+            label: "Buildings built",
+            backgroundColor: config.areaClasses.map(function (element) { return element.color }),
+            stack: "Stack 0",
+            data: [0, 0, 0, 0, 0, 0]
+          }
+        ]
+      },
+      options: {
+        responsive: false,
+        legend: {
+          display: false
+        },
+        title: {
+          display: true,
+          text: "Number of buildings by construction year"
+        },
+        scales: {
+          xAxes: [
+            {
+              stacked: true
+            }
+          ],
+          yAxes: [
+            {
+              stacked: true,
+              ticks: {
+                beginAtZero: true,
+                precision: 0
+              }
+            }
+          ]
+        }
+      }
+    });
+    return areaChart;
+  }
+
+
   function createHeightChart() {
     const heightCanvas = document.getElementById("heightChart");
     const heightBins = appUtils.heightBins;
@@ -134,6 +182,7 @@ function statsf (usage_array){
 
   const yearChart = createYearChart();
   const heightChart = createHeightChart();
+  const areaChart = createAreaChart();
   const usageChart = createUsageChart();
 
 
@@ -141,6 +190,7 @@ function statsf (usage_array){
   return {
     yearChart,
     heightChart,
+    areaChart,
     //usageChart,
     updateCharts(result) {
       const allStats = result.features[0].attributes;
@@ -156,6 +206,12 @@ function statsf (usage_array){
       });
       heightChart.data.datasets[0].data = heightValues;
       heightChart.update();
+
+      const areaValues = statistics.areaStatDefinitions.map(function (element) {
+        return allStats[element.outStatisticFieldName]
+      });
+      areaChart.data.datasets[0].data = areaValues;
+      areaChart.update();
 
       //const usageValues = statistics.usageStatDefinitions.map(function (element) {
       	//console.log(element);
