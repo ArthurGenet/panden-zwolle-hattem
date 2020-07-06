@@ -180,7 +180,7 @@ function createAreaChart() {
   const yearChart = createYearChart();
   const heightChart = createHeightChart();
   const areaChart = createAreaChart();
-  const usageChart = createUsageChart();
+  //const usageChart = createUsageChart();
 
 
   
@@ -188,7 +188,7 @@ function createAreaChart() {
     yearChart,
     heightChart,
     areaChart,
-    usageChart,
+    //usageChart,
     updateCharts(result) {
     console.log("updateChart")
       const allStats = result.features[0].attributes;
@@ -227,8 +227,8 @@ function createAreaChart() {
       console.log(usage1Values);
       const usageValues = usage1Values.concat(usage2Values);
       console.log(usageValues);
-      usageChart.data.datasets[0].data = usageValues;
-      usageChart.update();
+      //usageChart.data.datasets[0].data = usageValues;
+      //usageChart.update();
 
       //console.log(usageValues);
       //usageChart.data.datasets[0].data = usageValues;

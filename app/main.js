@@ -200,13 +200,13 @@ define([
         renderers.applyHeightRenderer(bdgLayer);
       });
 
-      document.getElementById("applyAreaRenderer").addEventListener("click", function () {
-        renderers.applyAreaRenderer(bdgLayer);
-      });
+      //document.getElementById("applyAreaRenderer").addEventListener("click", function () {
+        //renderers.applyAreaRenderer(bdgLayer);
+      //});
 
-      document.getElementById("applyUsageRenderer").addEventListener("click", function () {
-        renderers.applyUsageRenderer(bdgLayer);
-      });
+      //document.getElementById("applyUsageRenderer").addEventListener("click", function () {
+        //renderers.applyUsageRenderer(bdgLayer);
+      //});
 
       document.getElementById("clearRenderer").addEventListener("click", function () {
         renderers.applyOriginalTexture(bdgLayer);
