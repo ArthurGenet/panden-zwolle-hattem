@@ -190,7 +190,7 @@ define([
           // Creates a query object for statistics of each of the fields listed above
           const statDefinitions = educationFields.map(function(fieldName) {
             return {
-              onStatisticField: 'CASE WHEN '+fieldname+' = 1 THEN 1 ELSE 0 END',
+              onStatisticField: 'CASE WHEN '+fieldName+' = 1 THEN 1 ELSE 0 END',
               outStatisticFieldName: fieldName + "_TOTAL",
               statisticType: "sum"
             };
