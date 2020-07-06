@@ -141,7 +141,7 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
   return {
     yearChart,
     heightChart,
-    usageChart,
+    areaChart,
     updateCharts(result) {
       const allStats = result.features[0].attributes;
 
