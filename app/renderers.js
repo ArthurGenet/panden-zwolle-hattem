@@ -133,9 +133,8 @@ define([
       type: "simple-fill",  // autocasts as new SimpleFillSymbol()
       color: "yellow"
     }
-  }]
-}; 
-    
+  }],
+  }},
 
     applyOriginalTexture: function (layer) {
       layer.renderer = null;
