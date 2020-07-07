@@ -377,9 +377,7 @@ function createUsageChart() {
       const usageValues8 = statistics.usage8StatDefinitions.map(function (element) {
         return allStats[element.outStatisticFieldName]
       });
-      const usageValuesOther = statistics.usageOtherStatDefinitions.map(function (element) {
-        return allStats[element.outStatisticFieldName]
-      });
+      const usageValuesOther = allStats[usage_other];
       console.log(usageValues1);
       console.log(usageValues2);
       console.log(usageValues3);
