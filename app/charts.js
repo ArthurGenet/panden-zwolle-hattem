@@ -160,7 +160,7 @@ function createUsageChart() {
         responsive: false,
         cutoutPercentage: 35,
         legend: {
-          position: "bottom"
+          display: false
         },
         title: {
           display: true,
