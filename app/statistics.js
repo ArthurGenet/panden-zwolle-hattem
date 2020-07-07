@@ -159,16 +159,13 @@ define(["app/config", "app/utils"], function (config, appUtils) {
   const usage8StatDefinitions = generateUsage8Statistics();
 
     function generateUsageOtherStatistics() {
-    return config.usageValuesOther.map(function (element) {
-      const usage = element.value;
       return {
         onStatisticField:
           `CASE WHEN (${config.usageField1} = 1 OR ${config.usageField2} = 1 OR ${config.usageField3} = 1 OR ${config.usageField4} = 1 OR ${config.usageField5} = 1 OR ${config.usageField6} = 1 OR ${config.usageField7} = 1 OR ${config.usageField8} = 1 OR ${config.usageField8} = 1) THEN 0 ELSE 1 END`,
         outStatisticFieldName: `usage_other`,
         statisticType: "sum"
       }
-    });
-  } 
+    } 
 	
   const usageOtherStatDefinitions = generateUsageOtherStatistics();
 
