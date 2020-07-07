@@ -279,7 +279,7 @@ function createUsageChart() {
         },
         title: {
           display: true,
-          text: "Building usage"
+          text: "Gebruiksfunctie gebouw"
         }
       }
     });
