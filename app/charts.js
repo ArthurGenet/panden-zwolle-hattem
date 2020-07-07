@@ -299,7 +299,7 @@ function createUsageChart() {
           def_expression_usage = "AND Gebruiksfunctie IS NULL ";
         }
         else{
-          def_expression_usage = "AND is_" + label.toLowerCase().substring(0,6) + " = 1";
+          def_expression_usage = "AND is_" + label.toLowerCase().substring(0,7) + " = 1";
         }
       }
 

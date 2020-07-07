@@ -63,7 +63,7 @@ define([], function () {
       minArea: 0,
       maxArea: 50,
       color: "#bd0026",
-      label: "<50m2"
+      label: "< 50m2"
     }, {
       minArea: 50,
       maxArea: 100,
@@ -88,7 +88,7 @@ define([], function () {
       minArea: 500,
       maxArea: 100000000,
       color: "#ffffb2",
-      label: ">500m2"
+      label: "> 500m2"
     }],
     usageValues1: [{
       value: "bijeenkomstfunctie",

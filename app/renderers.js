@@ -98,16 +98,7 @@ define([
     },
 
     applyOriginalTexture: function (layer) {
-      layer.renderer = {
-        type: "simple",
-        symbol: {
-          type: "mesh-3d",
-          symbolLayers: [{
-            type: "fill",
-            material: null
-          }]
-        }
-      }
+      layer.renderer = null;
     }
   }
 
