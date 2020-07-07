@@ -98,30 +98,6 @@ define([
       }
     },
 
-    applyUsageRenderer: function(layer){
-    	layer.renderer =
-    	{
-  type: "unique-value",  // autocasts as new UniqueValueRenderer()
-  field: "is_bijeenk",
-  field2: "is_winkel",
-  defaultSymbol: { type: "mesh-3d" },  // autocasts as new SimpleFillSymbol()
-  uniqueValueInfos: [{
-    // All features with value of "North" will be blue
-    value: "1,0",
-    symbol: {
-      type: "mesh-3d",  // autocasts as new SimpleFillSymbol()
-      color: "blue"
-    }
-  }, {
-    // All features with value of "East" will be green
-    value: "0,1",
-    symbol: {
-      type: "mesh-3d",  // autocasts as new SimpleFillSymbol()
-      color: "green"
-    }
-  }],
-  }},
-
     applyOriginalTexture: function (layer) {
       layer.renderer = null;
     }
