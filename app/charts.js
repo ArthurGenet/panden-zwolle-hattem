@@ -294,7 +294,7 @@ function createUsageChart() {
         var label = usageChart.data.labels[clickedElementindex];
 
         if (label == "Andere"){
-          def_expression_usage = "AND Gebruiksfunctie IS NULL ";
+          def_expression_usage = "AND is_bijeenk = 0 AND is_gezondh = 0 AND is_industr = 0 AND is_kantoor = 0 AND is_logies = 0 AND is_onderwi = 0 AND is_winkel = 0 AND is_kas = 0";
         }
         else{
           var index = 7

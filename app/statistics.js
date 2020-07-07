@@ -170,7 +170,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     });
   } 
 	
-  const usage8StatDefinitions = generateUsage8Statistics();
+  const usageOtherStatDefinitions = generateUsageOtherStatistics();
 
   return {
     heightStatDefinitions,
@@ -184,6 +184,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     usage6StatDefinitions,
     usage7StatDefinitions,
     usage8StatDefinitions,
-    totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(areaStatDefinitions).concat(usage1StatDefinitions).concat(usage2StatDefinitions).concat(usage3StatDefinitions).concat(usage4StatDefinitions).concat(usage5StatDefinitions).concat(usage6StatDefinitions).concat(usage7StatDefinitions).concat(usage8StatDefinitions)
+    usageOtherStatDefinitions,
+    totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(areaStatDefinitions).concat(usage1StatDefinitions).concat(usage2StatDefinitions).concat(usage3StatDefinitions).concat(usage4StatDefinitions).concat(usage5StatDefinitions).concat(usage6StatDefinitions).concat(usage7StatDefinitions).concat(usage8StatDefinitions).concat(usageOtherStatDefinitions)
   };
 });
