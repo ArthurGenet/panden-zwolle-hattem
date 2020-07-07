@@ -253,12 +253,10 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
 
 function createUsageChart() {
 
-    const labels = ["Bijeenkomstfunctie","Gezondheidszorgfunctie","Industriefunctie","Kantoorfunctie","Logiesfunctie","Onderwijsfunctie","Winkelfunctie","Kas"];
-    //labels.push("Other");
+    const labels = ["Bijeenkomstfunctie","Gezondheidszorgfunctie","Industriefunctie","Kantoorfunctie","Logiesfunctie","Onderwijsfunctie","Winkelfunctie","Kas","Andere"];
 
-    const backgroundColor = ["#00FFC5","#E69800","#B53535","#8400A8","#376CBD","#E600A9","#FFFF00","#734C00"] ;   
+    const backgroundColor = ["#00FFC5","#E69800","#B53535","#8400A8","#376CBD","#E600A9","#FFFF00","#734C00","#FFB55A"] ;   
 
-    //backgroundColor.push(config.otherColor);
 
     const usageCanvas = document.getElementById("usageChart");
     const usageChart = new Chart(usageCanvas.getContext("2d"), {
@@ -299,7 +297,11 @@ function createUsageChart() {
           def_expression_usage = "AND Gebruiksfunctie IS NULL ";
         }
         else{
-          def_expression_usage = "AND is_" + label.toLowerCase().substring(0,7) + " = 1";
+          var index = 7
+     	  if(label.toLowerCase()[7] == "f"){
+     	  	index = 6;
+     	  }
+          def_expression_usage = "AND is_" + label.toLowerCase().substring(0,index) + " = 1";
         }
       }
 
@@ -375,6 +377,9 @@ function createUsageChart() {
       const usageValues8 = statistics.usage8StatDefinitions.map(function (element) {
         return allStats[element.outStatisticFieldName]
       });
+      const usageValuesOther = statistics.usageOtherStatDefinitions.map(function (element) {
+        return allStats[element.outStatisticFieldName]
+      });
       console.log(usageValues1);
       console.log(usageValues2);
       console.log(usageValues3);
@@ -383,7 +388,8 @@ function createUsageChart() {
       console.log(usageValues6);
       console.log(usageValues7);
       console.log(usageValues8);
-      usageChart.data.datasets[0].data = [usageValues1,usageValues2,usageValues3,usageValues4,usageValues5,usageValues6,usageValues7,usageValues8];
+      console.log(usageValuesOther);
+      usageChart.data.datasets[0].data = [usageValues1,usageValues2,usageValues3,usageValues4,usageValues5,usageValues6,usageValues7,usageValues8,usageValuesOther];
       usageChart.update();
 
     }

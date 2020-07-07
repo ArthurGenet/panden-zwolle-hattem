@@ -20,7 +20,6 @@ define([], function () {
       maxYear: 2020
     },
     noDataColor: "white",
-    otherColor: "#FFB55A",
     yearClasses: [{
       minYear: 0,
       maxYear: 1899,
