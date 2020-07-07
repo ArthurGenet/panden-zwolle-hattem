@@ -115,7 +115,22 @@ define([
           tool: "reshape",
           toggleToolOnClick: false
         },
-        view: view
+        view: view,
+          polygonSymbol: {
+            type: "polygon-3d",
+            symbolLayers: [
+              {
+                type: "fill",
+                material: {
+                  color: [100, 200, 210, 0.6]
+                },
+                outline: {
+                  color: [0, 0, 0, 1],
+                  size: "5px"
+                }
+              }
+            ]
+          }
       });
 
       sketchViewModel.on("create", function (event) {
