@@ -61,32 +61,32 @@ define([], function () {
     areaClasses: [{
       minArea: 0,
       maxArea: 50,
-      color: "#bd0026",
+      color: "#FEFF01",
       label: "< 50m2"
     }, {
       minArea: 50,
       maxArea: 100,
-      color: "#f03b20",
+      color: "#DEFF00",
       label: "50 - 100m2"
     }, {
       minArea: 100,
       maxArea: 200,
-      color: "#fd8d3c",
+      color: "#AAFF01",
       label: "100 - 200m2"
     }, {
       minArea: 200,
       maxArea: 350,
-      color: "#feb24c",
+      color: "#73FF00",
       label: "200 - 350m2"
     }, {
       minArea: 350,
       maxArea: 500,
-      color: "#fed976",
+      color: "#30FF00",
       label: "350 - 500m2"
     }, {
       minArea: 500,
       maxArea: 100000000,
-      color: "#ffffb2",
+      color: "#01FF00",
       label: "> 500m2"
     }],
     usageValues1: [{
