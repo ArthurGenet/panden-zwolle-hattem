@@ -70,14 +70,20 @@ body,
   position: relative; 
   height: auto;
   overflow-y: scroll;
-  padding-bottom: 2px;
+  padding-bottom: 4px;
 }
 
 #timeContainer {
   position: absolute;
-  bottom: 25px;
+  bottom: 4%;
   left: 14px;
   right: 404px;
+}
+
+br {
+   display: block;
+   content:" ";
+   margin-top: 50px;
 }
 
 .charts {
