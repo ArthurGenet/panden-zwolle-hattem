@@ -63,32 +63,32 @@ define([], function () {
       minArea: 0,
       maxArea: 50,
       color: "#bd0026",
-      label: "<50"
+      label: "<50m2"
     }, {
       minArea: 50,
       maxArea: 100,
       color: "#f03b20",
-      label: "50 - 100"
+      label: "50 - 100m2"
     }, {
       minArea: 100,
       maxArea: 200,
       color: "#fd8d3c",
-      label: "100 - 200"
+      label: "100 - 200m2"
     }, {
       minArea: 200,
       maxArea: 350,
       color: "#feb24c",
-      label: "200 - 350"
+      label: "200 - 350m2"
     }, {
       minArea: 350,
       maxArea: 500,
       color: "#fed976",
-      label: "350 - 500"
+      label: "350 - 500m2"
     }, {
       minArea: 500,
       maxArea: 100000000,
       color: "#ffffb2",
-      label: ">500"
+      label: ">500m2"
     }],
     usageValues1: [{
       value: "bijeenkomstfunctie",

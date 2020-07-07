@@ -226,13 +226,13 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
         
         if (areas[2] != null) {
           var start_area = areas[0];
-          var end_area = areas[2].substring(0, areas[2].lastIndexOf("m"));
+          var end_area = areas[2].substring(0, areas[2].lastIndexOf("m2"));
 
           def_expression_area = "AND oppervlak >= " + start_area + " AND oppervlak < " + end_area + " ";
         }
 
         else {
-          var area = areas[1].substring(0, areas[1].lastIndexOf("m"));
+          var area = areas[1].substring(0, areas[1].lastIndexOf("m2"));
           def_expression_area = "AND oppervlak " + areas[0] + " " + area + " ";
         }
           
@@ -295,11 +295,11 @@ function createUsageChart() {
         var clickedElementindex = activePoints[0]["_index"];
         var label = usageChart.data.labels[clickedElementindex];
 
-        if (label == "Other"){
+        if (label == "Andere"){
           def_expression_usage = "AND Gebruiksfunctie IS NULL ";
         }
         else{
-          def_expression_usage = "AND Gebruiksfunctie LIKE '" + label.toLowerCase() + "'";
+          def_expression_usage = "AND is_" + label.toLowerCase().substring(0,6) + " = 1";
         }
       }
 
