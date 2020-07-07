@@ -21,7 +21,7 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
         labels: config.yearClasses.map(function (element) { return element.label }),
         datasets: [
           {
-            label: "Buildings built",
+            label: "Gebouwde gebouwen",
             backgroundColor: config.yearClasses.map(function (element) { return element.color }),
             stack: "Stack 0",
             data: [0, 0, 0, 0, 0, 0]
@@ -35,7 +35,7 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
         },
         title: {
           display: true,
-          text: "Number of buildings by construction year"
+          text: "Aantal gebouwen per bouwjaar"
         },
         scales: {
           xAxes: [
@@ -99,7 +99,7 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
         labels: heightBins.map(function (element) { return element.label }),
         datasets: [
           {
-            label: "Buildings with this height",
+            label: "Gebouwen met deze hoogte",
             backgroundColor: heightBins.map(function (element) { return element.color }),
             data: [0, 0, 0, 0, 0, 0, 0, 0]
           }
@@ -112,7 +112,7 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
         },
         title: {
           display: true,
-          text: "Number of buildings by height"
+          text: "Aantal gebouwen op basis van hoogte"
         },
         scales: {
           xAxes: [
@@ -298,7 +298,7 @@ function createUsageChart() {
         }
         else{
           var index = 7
-     	  if(label.toLowerCase().charAt(7) == "f"){
+     	  if(label.toLowerCase().charAt(6) == "f"){
      	  	index = 6;
      	  }
           def_expression_usage = "AND is_" + label.toLowerCase().substring(0,index) + " = 1";
