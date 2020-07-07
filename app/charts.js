@@ -1,6 +1,18 @@
-define(["app/config", "app/utils", "app/statistics"], function (config, appUtils, statistics) {
+define(["app/config", "app/utils", "app/statistics", "app/main"], function (config, appUtils, statistics) {
+  
   Chart.defaults.global.defaultFontFamily = `"Avenir Next W00","Helvetica Neue",Helvetica,Arial,sans-serif`;
   Chart.defaults.global.defaultFontSize = 12;
+
+  var def_expression_date = "1=1 ";
+  var def_expression_height = "AND 1=1 ";
+  var def_expression_area = "AND 1=1 ";
+  var def_expression_usage = "AND 1=1";
+
+  var click_year = false;
+  var click_height = false;
+  var click_area = false;
+  var click_usage = false;
+
   function createYearChart() {
     const yearCanvas = document.getElementById("yearChart");
     const yearChart = new Chart(yearCanvas.getContext("2d"), {
@@ -43,12 +55,45 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
         }
       }
     });
+
+    yearCanvas.onclick = function(evt) {   
+
+      if (click_year == false){
+
+        click_year = true;
+        var activePoints = yearChart.getElementsAtEvent(evt);
+        var clickedElementindex = activePoints[0]["_index"];
+        var label = yearChart.data.labels[clickedElementindex];
+        var dates = label.split(" ");
+        
+        
+        if (dates[2] != null) {
+          var start_date = dates[0];
+          var end_date = dates[2];
+          def_expression_date = "bouwjaar >= " + start_date + " AND bouwjaar < " + end_date + " ";
+        }
+        else {
+          var date = dates[0].substring(dates[0].lastIndexOf("<") + 1, dates[0].length);
+          def_expression_date = "bouwjaar < " + date + " ";
+        }
+      }
+        
+      else{
+        click_year = false;
+        def_expression_date = "1=1 ";
+      }
+      
+
+      defExpression(def_expression_date,def_expression_height,def_expression_area,def_expression_usage);  
+    }
+
     return yearChart;
+
   }
   function createHeightChart() {
     const heightCanvas = document.getElementById("heightChart");
     const heightBins = appUtils.heightBins;
-    return new Chart(heightCanvas.getContext("2d"), {
+    const heightChart = new Chart(heightCanvas.getContext("2d"), {
       type: "horizontalBar",
       data: {
         labels: heightBins.map(function (element) { return element.label }),
@@ -87,7 +132,44 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
         }
       }
     });
+
+    heightCanvas.onclick = function(evt) {   
+      if (click_height == false){
+
+        click_height = true;
+        var activePoints = heightChart.getElementsAtEvent(evt);
+        var clickedElementindex = activePoints[0]["_index"];
+        var label = heightChart.data.labels[clickedElementindex];
+        var heights = label.split(" ");
+        
+        
+        if (heights[2] != null) {
+          var start_height = heights[0];
+          var end_height = heights[2].substring(0, heights[2].lastIndexOf("m"));
+
+          def_expression_height = "AND MAX_hoogte >= " + start_height + " AND MAX_hoogte < " + end_height + " ";
+        }
+
+        else {
+          var height = heights[1].substring(0, heights[1].lastIndexOf("m"));
+          def_expression_height = "AND MAX_hoogte " + heights[0] + " " + height + " ";
+        }
+          
+        
+      }
+        
+      else{
+        click_height = false;
+        def_expression_height = "AND 1=1 ";
+      }
+      
+
+      defExpression(def_expression_date,def_expression_height,def_expression_area,def_expression_usage);  
+    }
+    return heightChart;
   }
+
+
 
   function createAreaChart() {
     const areaCanvas = document.getElementById("areaChart");
@@ -131,8 +213,43 @@ define(["app/config", "app/utils", "app/statistics"], function (config, appUtils
         }
       }
     });
+
+      areaCanvas.onclick = function(evt) {   
+      if (click_area == false){
+
+        click_area = true;
+        var activePoints = areaChart.getElementsAtEvent(evt);
+        var clickedElementindex = activePoints[0]["_index"];
+        var label = areaChart.data.labels[clickedElementindex];
+        var areas = label.split(" ");
+        
+        
+        if (areas[2] != null) {
+          var start_area = areas[0];
+          var end_area = areas[2].substring(0, areas[2].lastIndexOf("m"));
+
+          def_expression_area = "AND oppervlak >= " + start_area + " AND oppervlak < " + end_area + " ";
+        }
+
+        else {
+          var area = areas[1].substring(0, areas[1].lastIndexOf("m"));
+          def_expression_area = "AND oppervlak " + areas[0] + " " + area + " ";
+        }
+          
+        
+      }
+        
+      else{
+        click_area = false;
+        def_expression_area = "AND 1=1 ";
+      }
+      
+      defExpression(def_expression_date,def_expression_height,def_expression_area,def_expression_usage);  
+    }
+
     return areaChart;
   }
+
 
 function createUsageChart() {
 
@@ -168,6 +285,33 @@ function createUsageChart() {
         }
       }
     });
+    usageCanvas.onclick = function(evt)
+
+    {   
+      if (click_usage == false){
+
+        click_usage = true;
+        var activePoints = usageChart.getElementsAtEvent(evt);
+        var clickedElementindex = activePoints[0]["_index"];
+        var label = usageChart.data.labels[clickedElementindex];
+
+        if (label == "Other"){
+          def_expression_usage = "AND Gebruiksfunctie IS NULL ";
+        }
+        else{
+          def_expression_usage = "AND Gebruiksfunctie LIKE '" + label.toLowerCase() + "'";
+        }
+      }
+
+      else {
+        click_usage = false;
+        def_expression_usage = "AND 1=1";
+      }
+      
+
+      defExpression(def_expression_date,def_expression_height,def_expression_area,def_expression_usage);  
+    }
+
     return usageChart;
   }
 
