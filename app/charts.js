@@ -298,7 +298,7 @@ function createUsageChart() {
         }
         else{
           var index = 7
-     	  if(label.toLowerCase()[7] == "f"){
+     	  if(label.toLowerCase().charAt(7) == "f"){
      	  	index = 6;
      	  }
           def_expression_usage = "AND is_" + label.toLowerCase().substring(0,index) + " = 1";
