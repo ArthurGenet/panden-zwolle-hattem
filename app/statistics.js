@@ -158,16 +158,7 @@ define(["app/config", "app/utils"], function (config, appUtils) {
 	
   const usage8StatDefinitions = generateUsage8Statistics();
 
-    function generateUsageOtherStatistics() {
-      return {
-        onStatisticField:
-          `CASE WHEN (${config.usageField1} = 1 OR ${config.usageField2} = 1 OR ${config.usageField3} = 1 OR ${config.usageField4} = 1 OR ${config.usageField5} = 1 OR ${config.usageField6} = 1 OR ${config.usageField7} = 1 OR ${config.usageField8} = 1 OR ${config.usageField8} = 1) THEN 0 ELSE 1 END`,
-        outStatisticFieldName: `usage_other`,
-        statisticType: "sum"
-      }
-    } 
-	
-  const usageOtherStatDefinitions = generateUsageOtherStatistics();
+
 
   return {
     heightStatDefinitions,
@@ -181,7 +172,6 @@ define(["app/config", "app/utils"], function (config, appUtils) {
     usage6StatDefinitions,
     usage7StatDefinitions,
     usage8StatDefinitions,
-    usageOtherStatDefinitions,
-    totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(areaStatDefinitions).concat(usage1StatDefinitions).concat(usage2StatDefinitions).concat(usage3StatDefinitions).concat(usage4StatDefinitions).concat(usage5StatDefinitions).concat(usage6StatDefinitions).concat(usage7StatDefinitions).concat(usage8StatDefinitions).concat(usageOtherStatDefinitions)
+    totalStatDefinitions: heightStatDefinitions.concat(yearStatDefinitions).concat(areaStatDefinitions).concat(usage1StatDefinitions).concat(usage2StatDefinitions).concat(usage3StatDefinitions).concat(usage4StatDefinitions).concat(usage5StatDefinitions).concat(usage6StatDefinitions).concat(usage7StatDefinitions).concat(usage8StatDefinitions)
   };
 });

@@ -253,9 +253,9 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
 
 function createUsageChart() {
 
-    const labels = ["Bijeenkomstfunctie","Gezondheidszorgfunctie","Industriefunctie","Kantoorfunctie","Logiesfunctie","Onderwijsfunctie","Winkelfunctie","Kas","Andere"];
+    const labels = ["Bijeenkomstfunctie","Gezondheidszorgfunctie","Industriefunctie","Kantoorfunctie","Logiesfunctie","Onderwijsfunctie","Winkelfunctie","Kas"];
 
-    const backgroundColor = ["#00FFC5","#E69800","#B53535","#8400A8","#376CBD","#E600A9","#FFFF00","#734C00","#FFB55A"] ;   
+    const backgroundColor = ["#00FFC5","#E69800","#B53535","#8400A8","#376CBD","#E600A9","#FFFF00","#734C00"] ;   
 
 
     const usageCanvas = document.getElementById("usageChart");
@@ -378,7 +378,6 @@ function createUsageChart() {
       const usageValues8 = statistics.usage8StatDefinitions.map(function (element) {
         return allStats[element.outStatisticFieldName]
       });
-      const usageValuesOther = allStats["usage_other"];
 
       console.log(usageValues1);
       console.log(usageValues2);
@@ -388,8 +387,7 @@ function createUsageChart() {
       console.log(usageValues6);
       console.log(usageValues7);
       console.log(usageValues8);
-      console.log(usageValuesOther);
-      usageChart.data.datasets[0].data = [usageValues1,usageValues2,usageValues3,usageValues4,usageValues5,usageValues6,usageValues7,usageValues8,usageValuesOther];
+      usageChart.data.datasets[0].data = [usageValues1,usageValues2,usageValues3,usageValues4,usageValues5,usageValues6,usageValues7,usageValues8];
       usageChart.update();
 
     }
