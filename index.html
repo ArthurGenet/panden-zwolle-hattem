@@ -32,7 +32,6 @@
 <body>
   <div id="viewDiv">
     <div id = statsContainer>
-      <div id="statsInner">
         <div class="title">Zwolle Hattem gebouwen</div>
         <div class="charts">
           <div>
@@ -47,16 +46,17 @@
             <canvas id="areaChart" width="350" height="170"></canvas>
             <button id="applyAreaRenderer">Color by area</button>
           </div><br/>
+        </div>
+        <div id="usageContainer">
           <div>
             <canvas id="usageChart" width="350" height="170"></canvas>
           </div>
+          <div class="buttons">
+            <button id="drawPolygon">Teken een selectie polygoon</button>
+            <button id="clearSelection">Verwijder selectie</button>
+            <button id="clearRenderer">Verwijder renderer</button>
+          </div>
         </div>
-        <div class="buttons">
-          <button id="drawPolygon">Teken een selectie polygoon</button>
-          <button id="clearSelection">Verwijder selectie</button>
-          <button id="clearRenderer">Verwijder renderer</button>
-        </div>
-      </div>
     </div>
     <div id="timeContainer" class="esri-widget">
     </div>
