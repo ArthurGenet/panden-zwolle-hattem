@@ -2,8 +2,8 @@ define([], function () {
   return {
     portalUrl: "http://jsapi.maps.arcgis.com/",
     itemId: "cb15de11a6a9451a9216af35b9ccba75",
-    buildingLayerTitle: "Panden",
-    heightField: "MAX_hoogte",
+    buildingLayerTitle: "Panden Zwolle en Hattem",
+    heightField: "hoogte",
     areaField: "oppervlak",
     usageField1: "is_bijeenk",
     usageField2: "is_gezondh",
