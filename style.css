@@ -81,7 +81,7 @@ body,
 #timeContainer {
   position: absolute;
   bottom: 25px;
-  left: 14px;
+  left: 0px;
   right: 417px;
   max-height: 100px;
 }
@@ -121,12 +121,7 @@ button:hover {
 .buttons {
   text-align: center;
   padding-top: 1em;
-  padding-bottom: 6px;
-  padding-right: : 6px;
-  padding-left: : 6px;
   padding: 6px;
 }
 
-#drawPolygon, #clearSelection, #clearRenderer{
-  padding-bottom: 10px;
-}
+

@@ -279,6 +279,7 @@ function createUsageChart() {
         },
         title: {
           display: true,
+          fontSize: 15,
           text: "Gebruiksfunctie gebouw"
         }
       }
