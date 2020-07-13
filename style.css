@@ -82,7 +82,7 @@ body,
   position: absolute;
   bottom: 25px;
   left: 0px;
-  right: 417px;
+  right: 430px;
   max-height: 100px;
 }
 
@@ -121,7 +121,7 @@ button:hover {
 .buttons {
   text-align: center;
   padding-top: 1em;
-  padding: 6px;
+  padding: 4px;
 }
 
 
