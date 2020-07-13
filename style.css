@@ -124,8 +124,7 @@ button:hover {
   padding-bottom: 6px;
   padding-right: : 6px;
   padding-left: : 6px;
-
-
+  padding: 6px;
 }
 
 #drawPolygon, #clearSelection, #clearRenderer{
