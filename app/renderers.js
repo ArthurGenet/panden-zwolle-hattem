@@ -98,8 +98,9 @@ define([
       }
     },
 
-    applyOriginalTexture: function (layer) {
-      layer.renderer = null;
+    applyOriginalTexture: function (layer, basic_renderer) {
+
+      layer.renderer = basic_renderer;
     }
   }
 

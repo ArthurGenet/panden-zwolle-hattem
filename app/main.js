@@ -52,6 +52,7 @@ define([
       esriConfig.portalUrl = config.portalUrl;
 
       let bdgLayerView = null;
+      let basic_renderer = null;
 
       const appState = {
         minYear: 0,
@@ -78,7 +79,7 @@ define([
           if (layer.title === config.buildingLayerTitle) {
             bdgLayer = layer;
             bdgLayer.outFields = [config.heightField, config.yearField,  config.usageField2,config.usageField3,config.usageField4,config.usageField5,config.usageField6,config.usageField7,config.usageField8, config.areaField, config.usageField1];
-
+            basic_renderer = bdgLayer.renderer;
             view.whenLayerView(layer).then(function (lyrView) {
               bdgLayerView = lyrView;
               // add time slider
@@ -196,7 +197,7 @@ define([
       });
 
       document.getElementById("clearRenderer").addEventListener("click", function () {
-        renderers.applyOriginalTexture(bdgLayer);
+        renderers.applyOriginalTexture(bdgLayer, basic_renderer);
       });
 
       function updateMap() {
