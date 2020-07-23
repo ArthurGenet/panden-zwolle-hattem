@@ -58,7 +58,7 @@ body,
 }
 
 #statsContainer {
-  position: relative;
+  position: fixed;
   right: 20px;
   background-color: white;
   padding: 0.4em;
