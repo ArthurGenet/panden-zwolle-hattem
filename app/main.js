@@ -107,7 +107,7 @@ define([
         });
       });
 
-      view.ui.remove([ "compass", "toggle", "zoom" ]);
+      view.ui.remove([ "compass", "navigation-toggle", "zoom" ]);
 
       var zoomWidget = new Zoom({
         view: view,
