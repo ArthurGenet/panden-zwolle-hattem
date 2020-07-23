@@ -83,7 +83,9 @@ body,
   position: absolute;
   bottom: 25px;
   max-height: 100px;
-  width: 100px;
+  width: 100vw;
+  right: 0px;
+  left: 0px;
   z-index: 2;
 }
 
