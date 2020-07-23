@@ -179,7 +179,7 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
         labels: config.areaClasses.map(function (element) { return element.label }),
         datasets: [
           {
-            label: "Buildings built",
+            label: "Aantal gebouwen in dit gebied",
             backgroundColor: config.areaClasses.map(function (element) { return element.color }),
             stack: "Stack 0",
             data: [0, 0, 0, 0, 0, 0]
@@ -193,7 +193,7 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
         },
         title: {
           display: true,
-          text: "Number of buildings by area"
+          text: "Aantal gebouwen per gebied"
         },
         scales: {
           xAxes: [
