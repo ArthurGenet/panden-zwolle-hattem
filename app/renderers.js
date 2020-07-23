@@ -19,6 +19,11 @@ define([
                 color: element.color,
                 colorMixMode: "replace"
               },
+              edges: {
+              type: "solid",
+              color: [0, 0, 0, 0.6],
+              size: 1.5
+              },
             }]
           }
         }
@@ -49,6 +54,11 @@ define([
           symbolLayers: [{
             type: "fill",
             material: { color: config.noDataColor, colorMixMode: "replace" },
+            edges: {
+              type: "solid",
+              color: [0, 0, 0, 0.6],
+              size: 1.5
+            },
           }]
         },
         visualVariables: {
@@ -91,6 +101,11 @@ define([
             material: {
               color: config.noDataColor,
               colorMixMode: "replace"
+            },
+            edges: {
+              type: "solid",
+              color: [0, 0, 0, 0.6],
+              size: 1.5
             },
           }]
         },
