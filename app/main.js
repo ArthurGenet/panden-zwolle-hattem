@@ -16,6 +16,8 @@ define([
   "esri/layers/GraphicsLayer",
   "esri/widgets/Sketch/SketchViewModel",
   "esri/widgets/Zoom",
+  "esri/widgets/NavigationToggle",
+  "esri/widgets/Compass",
   "esri/config",
   "esri/core/promiseUtils",
   "app/time",
@@ -30,6 +32,8 @@ define([
   GraphicsLayer,
   SketchViewModel,
   Zoom,
+  NavigationToggle,
+  Compass,
   esriConfig,
   promiseUtils,
   time,
@@ -103,11 +107,21 @@ define([
         });
       });
 
-      view.ui.remove("zoom");
+      view.ui.remove([ compass, toggle, "zoom" ]);
+
       var zoomWidget = new Zoom({
         view: view,
         container: "widgets"
       });
+      var navigationWidget = new NavigationToggle({
+        view: view,
+        container: "widgets"
+      });
+      var compassWidget = new Compass({
+        view: view,
+        container: "widgets"
+      });
+      
 
       // add sketch functionality
 

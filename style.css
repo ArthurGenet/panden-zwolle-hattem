@@ -137,7 +137,8 @@ h2 {
 
 #widgets {
 	position: absolute;
-	right:400px;
+	left:400px;
+	top: 10px;
 }
 
 
