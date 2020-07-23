@@ -111,15 +111,15 @@ define([
 
       var zoomWidget = new Zoom({
         view: view,
-        container: "widgets"
+        container: "zoomWidget"
       });
       var navigationWidget = new NavigationToggle({
         view: view,
-        container: "widgets"
+        container: "toggleWidget"
       });
       var compassWidget = new Compass({
         view: view,
-        container: "widgets"
+        container: "compassWidget"
       });
       
 
