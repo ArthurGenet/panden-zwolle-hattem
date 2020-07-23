@@ -81,8 +81,8 @@ body,
 
 #timeContainer {
   position: absolute;
-  bottom: 2vh;
-  max-height: 18vh;
+  bottom: 25px;
+  max-height: 50px;
   width: 100vw;
   right: 0px;
   left: 0px;
