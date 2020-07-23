@@ -21,8 +21,8 @@ define([
               },
               edges: {
               type: "solid",
-              color: [0, 0, 0, 0.6],
-              size: 1.5
+              color: [0, 0, 0],
+              size: 0.8
               },
             }]
           }
@@ -56,8 +56,8 @@ define([
             material: { color: config.noDataColor, colorMixMode: "replace" },
             edges: {
               type: "solid",
-              color: [0, 0, 0, 0.6],
-              size: 1.5
+              color: [0, 0, 0],
+              size: 0.8
             },
           }]
         },
@@ -86,6 +86,11 @@ define([
                 color: element.color,
                 colorMixMode: "replace"
               },
+              edges: {
+              type: "solid",
+              color: [0, 0, 0],
+              size: 0.8
+              },
             }]
           }
         }
@@ -101,11 +106,6 @@ define([
             material: {
               color: config.noDataColor,
               colorMixMode: "replace"
-            },
-            edges: {
-              type: "solid",
-              color: [0, 0, 0, 0.6],
-              size: 1.5
             },
           }]
         },
