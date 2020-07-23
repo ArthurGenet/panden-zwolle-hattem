@@ -58,7 +58,7 @@ body,
 }
 
 #statsContainer {
-  position: fixed;
+  position: relative;
   right: 20px;
   background-color: white;
   padding: 0.4em;
@@ -80,7 +80,7 @@ body,
 }
 
 #timeContainer {
-  position: fixed;
+  position: relative;
   bottom: 2vh;
   max-height: 18vh;
   width: 100vw;
