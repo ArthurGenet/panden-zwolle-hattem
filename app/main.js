@@ -100,7 +100,13 @@ define([
           }
         });
       });
-      view.ui.move("zoom", "top-right");
+      
+      view.ui.remove("zoom");
+      var zoomWidget = new Zoom({
+        view: view,
+        container: "widgets"
+      });
+
       // add sketch functionality
 
       const sketchLayer = new GraphicsLayer({

@@ -135,4 +135,9 @@ h2 {
 	font-size: 0.8em;
 }
 
+#widgets {
+	position: absolute;
+	right:400px;
+}
+
 
