@@ -100,7 +100,7 @@ define([
           }
         });
       });
-
+      view.ui.move("zoom", "top-right");
       // add sketch functionality
 
       const sketchLayer = new GraphicsLayer({
