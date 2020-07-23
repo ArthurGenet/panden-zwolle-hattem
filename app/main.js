@@ -15,6 +15,7 @@ define([
   "esri/views/SceneView",
   "esri/layers/GraphicsLayer",
   "esri/widgets/Sketch/SketchViewModel",
+  "esri/widgets/Zoom",
   "esri/config",
   "esri/core/promiseUtils",
   "app/time",
@@ -28,6 +29,7 @@ define([
   SceneView,
   GraphicsLayer,
   SketchViewModel,
+  Zoom,
   esriConfig,
   promiseUtils,
   time,
@@ -100,7 +102,7 @@ define([
           }
         });
       });
-      
+
       view.ui.remove("zoom");
       var zoomWidget = new Zoom({
         view: view,
