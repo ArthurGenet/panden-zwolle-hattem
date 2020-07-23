@@ -58,7 +58,6 @@ body,
 }
 
 #statsContainer {
-  position: static;
   right: 20px;
   background-color: white;
   padding: 0.4em;
@@ -69,7 +68,6 @@ body,
 }
 
 #usageContainer{
-  position: absolute;
   bottom: 150px;
   left: 0px;
   background-color: white;
