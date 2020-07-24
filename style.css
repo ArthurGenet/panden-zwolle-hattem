@@ -140,5 +140,9 @@ h2 {
 	left:400px;
 	top: 10px;
 }
-
+#zoomWidget,
+#toggleWidget,
+#compassWidget{
+	padding: 20px;
+}
 
