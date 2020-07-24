@@ -22,7 +22,7 @@ define([
               edges: {
               type: "solid",
               color: [0, 0, 0],
-              size: 0.8
+              size: 0.7
               },
             }]
           }
@@ -57,7 +57,7 @@ define([
             edges: {
               type: "solid",
               color: [0, 0, 0],
-              size: 0.8
+              size: 0.7
             },
           }]
         },
@@ -89,7 +89,7 @@ define([
               edges: {
               type: "solid",
               color: [0, 0, 0],
-              size: 0.8
+              size: 0.7
               },
             }]
           }
