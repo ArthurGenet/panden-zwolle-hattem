@@ -68,22 +68,24 @@ define([
         features: null
       };
       let webscene;
+      let view;
       try{
         webscene = new WebScene({
           portalItem: {
             id: config.itemId
           }
         });
+        view = new SceneView({
+          container: "viewDiv",
+          qualityProfile: "high",
+          map: webscene
+        });
       }
       catch{
         location.reload(true);
       }
 
-      const view = new SceneView({
-        container: "viewDiv",
-        qualityProfile: "high",
-        map: webscene
-      });
+      
 
       view.when(function () {
         webscene.allLayers.forEach(layer => {
