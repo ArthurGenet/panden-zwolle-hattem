@@ -137,12 +137,12 @@ h2 {
 
 #widgets {
 	position: absolute;
-	left:400px;
+	left:calc(20px + @{usageContainer-height});
 	top: 10px;
 }
 #zoomWidget,
 #toggleWidget,
 #compassWidget{
-	margin: 20px;
+	margin: 10px;
 }
 
