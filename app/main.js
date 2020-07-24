@@ -43,6 +43,7 @@ define([
 
   return {
     init: function () {
+      location.reload(true);
 
       var info = new OAuthInfo({
           // Swap this ID out with a registered application ID
@@ -67,15 +68,14 @@ define([
         filterGeometry: null,
         features: null
       };
-      let webscene;
-      let view;
-      try{
-        webscene = new WebScene({
+      
+      const webscene = new WebScene({
           portalItem: {
             id: config.itemId
           }
         });
-        view = new SceneView({
+
+      const view = new SceneView({
           container: "viewDiv",
           qualityProfile: "high",
           map: webscene
@@ -111,11 +111,7 @@ define([
           }
         });
       });
-    }
-      catch(error){
-        console.log(error)
-        location.reload(true);
-      }
+
 
       view.ui.remove([ "compass", "navigation-toggle", "zoom" ]);
 
