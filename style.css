@@ -79,6 +79,7 @@ body,
   z-index: 2;
   padding: 0.4em;
   overflow-y: auto;
+  opacity: 0.8;
 }
 
 #timeContainer {
