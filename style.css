@@ -148,3 +148,7 @@ h2 {
 	margin: 10px;
 }
 
+#mainContainer{
+	display : flex;
+}
+
