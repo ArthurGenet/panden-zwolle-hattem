@@ -51,8 +51,6 @@ define([
           // portalUrl: "https://<host>:<port>/arcgis"
           // Uncomment the next line to prevent the user's signed in state from being shared with other apps on the same domain with the same authNamespace value.
           // authNamespace: "portal_oauth_inline",
-          expiration: 1000,
-          minTimeUntilExpiration: 500,
           popup: true
         });
         esriId.registerOAuthInfos([info]);
@@ -69,12 +67,17 @@ define([
         filterGeometry: null,
         features: null
       };
-
-      const webscene = new WebScene({
-        portalItem: {
-          id: config.itemId
-        }
-      });
+      let webscene;
+      try{
+        webscene = new WebScene({
+          portalItem: {
+            id: config.itemId
+          }
+        });
+      }
+      catch{
+        location.reload(true);
+      }
 
       const view = new SceneView({
         container: "viewDiv",
