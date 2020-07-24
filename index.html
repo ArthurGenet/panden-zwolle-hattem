@@ -45,32 +45,35 @@
         </div>
         
     </div>
-    <div id="usageContainer">
-        <div class="title">Zwolle Hattem gebouwen</div>
-
-        <div>
-            <canvas id="usageChart" height="215"></canvas>
-        </div>
-        <br/>
-        <h2>Selecteer</h2>
-        <div class="buttons">
-	        <button id="drawPolygon">Teken een selectie polygoon</button><br/>
-	        <button id="clearSelection">Verwijder selectie</button><br/>
-        </div>
-        <h2>Kleur op</h2>
-        <div class="buttons">
-          <button id="applyYearRenderer">Kleur op basis van bouwjaar</button><br/>
-          <button id="applyHeightRenderer">Kleur op basis van hoogte</button><br/>
-          <button id="applyAreaRenderer">Kleur per gebied</button><br/>
-          <button id="clearRenderer">Verwijder renderer</button><br/>
-        </div>
-    </div>
     <div id="timeContainer" class="esri-widget">
     </div>
-    <div id = "widgets">
-      <div id = "zoomWidget"></div>
-      <div id = "toggleWidget"></div>
-      <div id = "compassWidget"></div>
+    <div id="mainContainer">
+
+      <div id="usageContainer">
+          <div class="title">Zwolle Hattem gebouwen</div>
+          <div>
+              <canvas id="usageChart" height="215"></canvas>
+          </div>
+          <br/>
+          <h2>Selecteer</h2>
+          <div class="buttons">
+  	        <button id="drawPolygon">Teken een selectie polygoon</button><br/>
+  	        <button id="clearSelection">Verwijder selectie</button><br/>
+          </div>
+          <h2>Kleur op</h2>
+          <div class="buttons">
+            <button id="applyYearRenderer">Kleur op basis van bouwjaar</button><br/>
+            <button id="applyHeightRenderer">Kleur op basis van hoogte</button><br/>
+            <button id="applyAreaRenderer">Kleur per gebied</button><br/>
+            <button id="clearRenderer">Verwijder renderer</button><br/>
+          </div>
+      </div>
+    
+      <div id = "widgets">
+        <div id = "zoomWidget"></div>
+        <div id = "toggleWidget"></div>
+        <div id = "compassWidget"></div>
+      </div>
     </div>
 
   </div>

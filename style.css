@@ -80,6 +80,7 @@ body,
   padding: 0.4em;
   overflow-y: auto;
   opacity: 0.8;
+  display: inline;
 }
 
 #timeContainer {
@@ -138,7 +139,7 @@ h2 {
 
 #widgets {
 	position: absolute;
-	left:calc(20px + @{usageContainer-height});
+	display: inline;
 	top: 10px;
 }
 #zoomWidget,
