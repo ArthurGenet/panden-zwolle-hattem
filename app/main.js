@@ -80,11 +80,8 @@ define([
           qualityProfile: "high",
           map: webscene
         });
-      }
-      catch(error){
-        console.log(error);
-        location.reload(true);
-      }
+      
+
 
       
 
@@ -114,6 +111,11 @@ define([
           }
         });
       });
+    }
+      catch(error){
+        console.log(error)
+        location.reload(true);
+      }
 
       view.ui.remove([ "compass", "navigation-toggle", "zoom" ]);
 
