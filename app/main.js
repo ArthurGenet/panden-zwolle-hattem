@@ -212,7 +212,6 @@ define([
       });
 
       document.getElementById("applyYearRenderer").addEventListener("click", function () {
-        window.history.forward(1);
         renderers.applyYearRenderer(bdgLayer);
       });
 
