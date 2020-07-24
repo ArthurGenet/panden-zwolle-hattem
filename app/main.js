@@ -43,7 +43,6 @@ define([
 
   return {
     init: function () {
-      location.reload(true);
 
       var info = new OAuthInfo({
           // Swap this ID out with a registered application ID
@@ -213,6 +212,8 @@ define([
       });
 
       document.getElementById("applyYearRenderer").addEventListener("click", function () {
+              location.reload(true);
+
         renderers.applyYearRenderer(bdgLayer);
       });
 
