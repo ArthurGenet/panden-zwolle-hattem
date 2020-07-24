@@ -52,6 +52,7 @@ define([
           // Uncomment the next line to prevent the user's signed in state from being shared with other apps on the same domain with the same authNamespace value.
           // authNamespace: "portal_oauth_inline",
           expiration: 1000,
+          minTimeUntilExpiration: 500,
           popup: true
         });
         esriId.registerOAuthInfos([info]);
