@@ -212,8 +212,7 @@ define([
       });
 
       document.getElementById("applyYearRenderer").addEventListener("click", function () {
-              location.reload(true);
-
+        window.history.forward(1);
         renderers.applyYearRenderer(bdgLayer);
       });
 
