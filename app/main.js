@@ -81,7 +81,8 @@ define([
           map: webscene
         });
       }
-      catch{
+      catch(error){
+        console.log(error);
         location.reload(true);
       }
 
