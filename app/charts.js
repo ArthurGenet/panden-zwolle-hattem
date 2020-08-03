@@ -334,7 +334,6 @@ function createUsageChart() {
     usageChart,
     updateCharts(result) {
       const allStats = result.features[0].attributes;
-      console.log(allStats);
 
       const yearValues = statistics.yearStatDefinitions.map(function (element) {
         return allStats[element.outStatisticFieldName]
@@ -380,14 +379,6 @@ function createUsageChart() {
         return allStats[element.outStatisticFieldName]
       });
 
-      console.log(usageValues1);
-      console.log(usageValues2);
-      console.log(usageValues3);
-      console.log(usageValues4);
-      console.log(usageValues5);
-      console.log(usageValues6);
-      console.log(usageValues7);
-      console.log(usageValues8);
       usageChart.data.datasets[0].data = [usageValues1,usageValues2,usageValues3,usageValues4,usageValues5,usageValues6,usageValues7,usageValues8];
       usageChart.update();
 

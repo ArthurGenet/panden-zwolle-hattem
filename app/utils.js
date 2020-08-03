@@ -6,7 +6,6 @@ function calculateHeightBins() {
     const binSize = config.heightVariable.binSize;
     for (let i = stops[stops.length - 1].value; i >= stops[0].value-binSize; i -= binSize) {
       const nextValue = i + binSize;
-      console.log(nextValue);
       let fieldName = `height_${i}_${nextValue}`;
       let label = `${i} < ${nextValue}m`;
       let statsField = `CASE WHEN (${config.heightField} < ${nextValue} AND ${config.heightField} >= ${i}) THEN 1 ELSE 0 END`;

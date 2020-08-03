@@ -2,7 +2,6 @@ let bdgLayer = null;
 
 function defExpression(date_expression, height_expression, area_expression, usage_expression){
   def_expression = date_expression+height_expression+area_expression+usage_expression;
-  console.log(def_expression);
   bdgLayer.definitionExpression = def_expression;
 }
 
@@ -101,10 +100,8 @@ define([
 
               // watch for changes on the layer
               bdgLayerView.watch("updating", function (updating) {
-                //if (!updating) {
-                  console.log("updating");
-                  runQuery();
-                //}
+                console.log("updating");
+                runQuery();
               });
             });
           }
