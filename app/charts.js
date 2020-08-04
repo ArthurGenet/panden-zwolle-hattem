@@ -35,7 +35,7 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
         },
         title: {
           display: true,
-          text: "Aantal gebouwen per bouwjaar"
+          text: "Bouwjaar"
         },
         scales: {
           xAxes: [
@@ -112,7 +112,7 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
         },
         title: {
           display: true,
-          text: "Aantal gebouwen op basis van hoogte"
+          text: "Hoogte"
         },
         scales: {
           xAxes: [
@@ -179,7 +179,7 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
         labels: config.areaClasses.map(function (element) { return element.label }),
         datasets: [
           {
-            label: "Gebouwen in dit gebied",
+            label: "Gebouwen met deze oppervlakte",
             backgroundColor: config.areaClasses.map(function (element) { return element.color }),
             stack: "Stack 0",
             data: [0, 0, 0, 0, 0, 0]
@@ -193,7 +193,7 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
         },
         title: {
           display: true,
-          text: "Aantal gebouwen per m2"
+          text: "Oppervlakte"
         },
         scales: {
           xAxes: [
