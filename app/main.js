@@ -125,11 +125,15 @@ define([
             var clickedElementindex = activePoints[0]["_index"];
             var label = charts.usageChart.data.labels[clickedElementindex];
 
-            if (label == "Other"){
-              def_expression_usage = "AND Gebruiksfunctie IS NULL ";
+            if (label == "Andere"){
+              def_expression_usage = "AND is_bijeenk = 0 AND is_gezondh = 0 AND is_industr = 0 AND is_kantoor = 0 AND is_logies = 0 AND is_onderwi = 0 AND is_winkel = 0 AND is_kas = 0";
             }
             else{
-              def_expression_usage = "AND Gebruiksfunctie LIKE '" + label.toLowerCase() + "'";
+              var index = 7
+             if(label.toLowerCase().charAt(6) == "f"){
+               index = 6;
+             }
+              def_expression_usage = "AND is_" + label.toLowerCase().substring(0,index) + " = 1";
             }
           }
 
@@ -143,8 +147,7 @@ define([
         }
 
 
-        charts.heightCanvas.onclick = function(evt)
-        {   
+        charts.heightCanvas.onclick = function(evt) {   
           if (click_height == false){
 
             click_height = true;
@@ -158,12 +161,12 @@ define([
               var start_height = heights[0];
               var end_height = heights[2].substring(0, heights[2].lastIndexOf("m"));
 
-              def_expression_height = "AND Pandhoogte >= " + start_height + " AND Pandhoogte < " + end_height + " ";
+              def_expression_height = "AND hoogte >= " + start_height + " AND hoogte < " + end_height + " ";
             }
 
             else {
               var height = heights[1].substring(0, heights[1].lastIndexOf("m"));
-              def_expression_height = "AND Pandhoogte " + heights[0] + " " + height + " ";
+              def_expression_height = "AND hoogte " + heights[0] + " " + height + " ";
             }
               
             
@@ -180,8 +183,8 @@ define([
 
 
 
-        charts.yearCanvas.onclick = function(evt)
-        {   
+        charts.yearCanvas.onclick = function(evt) {   
+
           if (click_year == false){
 
             click_year = true;
@@ -194,11 +197,11 @@ define([
             if (dates[2] != null) {
               var start_date = dates[0];
               var end_date = dates[2];
-              def_expression_date = "Bouwjaar >= " + start_date + " AND Bouwjaar < " + end_date + " ";
+              def_expression_date = "bouwjaar >= " + start_date + " AND bouwjaar < " + end_date + " ";
             }
             else {
               var date = dates[0].substring(dates[0].lastIndexOf("<") + 1, dates[0].length);
-              def_expression_date = "Bouwjaar < " + date + " ";
+              def_expression_date = "bouwjaar < " + date + " ";
             }
           }
             
