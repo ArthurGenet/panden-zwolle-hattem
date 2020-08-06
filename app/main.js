@@ -143,7 +143,7 @@ define([
           }
           
 
-          defExpression(def_expression_date,def_expression_height,def_expression_usage);  
+          defExpression(def_expression_date,def_expression_height,def_expression_area,def_expression_usage);  
         }
 
 
@@ -178,7 +178,7 @@ define([
           }
           
 
-          defExpression(def_expression_date,def_expression_height,def_expression_usage);  
+          defExpression(def_expression_date,def_expression_height,def_expression_area,def_expression_usage);  
         }
 
 
@@ -211,7 +211,7 @@ define([
           }
           
 
-          defExpression(def_expression_date,def_expression_height,def_expression_usage);  
+          defExpression(def_expression_date,def_expression_height,def_expression_area,def_expression_usage);  
         }
 
         charts.areaCanvas.onclick = function(evt) 
@@ -251,11 +251,6 @@ define([
 
       function defExpression(date_expression, height_expression, area_expression, usage_expression){
         def_expression = date_expression+height_expression+area_expression+usage_expression;
-        console.log(date_expression);
-        console.log(height_expression);
-        console.log(area_expression);
-        console.log(usage_expression);
-        console.log(def_expression);
         bdgLayer.definitionExpression = def_expression;
       }
 
