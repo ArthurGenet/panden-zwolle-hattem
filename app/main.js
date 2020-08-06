@@ -95,6 +95,7 @@ define([
               bdgLayerView.watch("updating", function (updating) {
                 console.log("updating");
                 runQuery();
+                addChartEventListeners();
               });
             });
           }
@@ -112,7 +113,7 @@ define([
       var click_usage = false;
       var click_area = false;
 
-      
+
       function addChartEventListeners() {
 
         charts.usageCanvas.onclick = function(evt)
