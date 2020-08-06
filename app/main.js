@@ -251,6 +251,7 @@ define([
 
       function defExpression(date_expression, height_expression, area_expression, usage_expression){
         def_expression = date_expression+height_expression+area_expression+usage_expression;
+        console.log(def_expression);
         bdgLayer.definitionExpression = def_expression;
       }
 
