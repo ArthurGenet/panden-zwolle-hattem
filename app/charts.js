@@ -3,9 +3,10 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
   Chart.defaults.global.defaultFontFamily = `"Avenir Next W00","Helvetica Neue",Helvetica,Arial,sans-serif`;
   Chart.defaults.global.defaultFontSize = 12;
 
+  
+  const yearCanvas = document.getElementById("yearChart");
 
   function createYearChart() {
-    const yearCanvas = document.getElementById("yearChart");
     const yearChart = new Chart(yearCanvas.getContext("2d"), {
       type: "bar",
       data: {
@@ -50,8 +51,11 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
     return yearChart;
 
   }
+
+
+  const heightCanvas = document.getElementById("heightChart");
+
   function createHeightChart() {
-    const heightCanvas = document.getElementById("heightChart");
     const heightBins = appUtils.heightBins;
     const heightChart = new Chart(heightCanvas.getContext("2d"), {
       type: "horizontalBar",
@@ -97,9 +101,9 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
   }
 
 
+  const areaCanvas = document.getElementById("areaChart");
 
   function createAreaChart() {
-    const areaCanvas = document.getElementById("areaChart");
     const areaChart = new Chart(areaCanvas.getContext("2d"), {
       type: "bar",
       data: {
@@ -145,14 +149,15 @@ define(["app/config", "app/utils", "app/statistics", "app/main"], function (conf
   }
 
 
-function createUsageChart() {
+  const usageCanvas = document.getElementById("usageChart");
+
+  function createUsageChart() {
 
     const labels = ["Bijeenkomstfunctie","Gezondheidszorgfunctie","Industriefunctie","Kantoorfunctie","Logiesfunctie","Onderwijsfunctie","Winkelfunctie","Kas"];
 
     const backgroundColor = ["#00FFC5","#E69800","#B53535","#8400A8","#376CBD","#E600A9","#FFFF00","#734C00"] ;   
 
 
-    const usageCanvas = document.getElementById("usageChart");
     const usageChart = new Chart(usageCanvas.getContext("2d"), {
       type: "doughnut",
       data: {
